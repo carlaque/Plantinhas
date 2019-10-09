@@ -1,0 +1,30 @@
+#venv
+.venv
+
+#python
+__pycache__/
+*.py[cod]
+*$py.class
+
+#django:
+*.log
+local_settings.py
+
+#vscode
+.vscode
+
+# mypy
+.mypy_cache/
+
+#sql
+.DS_Store
+*.sqlite3
+media/
+*.pyc
+*.db
+*.pid
+
+# django migrations 
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
