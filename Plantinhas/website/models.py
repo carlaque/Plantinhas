@@ -9,21 +9,21 @@ class Usuario(models.Model):
     username = models.CharField(max_length=50, verbose_name='Username')
     senha = models.CharField(max_length=16, verbose_name='Senha')
 
-    def __str__ (self):
+    def __int__ (self):
         return self.codigo
 
 class Regiao(models.Model):
     codigo = models.AutoField(primary_key=True)
     nome = models.CharField(max_length=255, verbose_name='Nome')
 
-    def __str__ (self):
-        return self.codigo
+    def __int__ (self):
+        return self.codigoS
 
 class Intencao(models.Model):
     codigo = models.AutoField(primary_key=True)
     tipo = models.CharField(max_length=255,verbose_name='Tipo')
 
-    def __str__ (self):
+    def __int__ (self):
         return self.codigo
 
 class Espaco(models.Model):
@@ -32,7 +32,7 @@ class Espaco(models.Model):
     tamanho = models.CharField(max_length=255, verbose_name='tamanho')
     codRegiao = models.ForeignKey(Regiao, on_delete=None)
 
-    def __str__ (self):
+    def __int__ (self):
         return sefl.codigo
 
 class Planta(models.Model):
@@ -47,7 +47,7 @@ class Planta(models.Model):
     codTipo = models.ForeignKey(Intencao, on_delete=None)
     observacoes = models.CharField(max_length=255, verbose_name='observacoes')
 
-    def __str__ (self):
+    def __int__ (self):
         return self.codigo
 
 class Jardim(models.Model):
@@ -56,7 +56,7 @@ class Jardim(models.Model):
     ensolarado = models.BooleanField()
     codUsuario = models.ForeignKey(Usuario, on_delete=None)
 
-    def __str__ (self):
+    def __int__ (self):
         return self.codigo
 
 class Plantada(models.Model):
@@ -64,6 +64,6 @@ class Plantada(models.Model):
     codPlanta = models.ForeignKey(Planta, on_delete=models.CASCADE)
     codJardim = models.ForeignKey(Jardim, on_delete=models.CASCADE)
 
-    def __str__ (self):
+    def __int__ (self):
         return self.codigo
 
