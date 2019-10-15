@@ -2,7 +2,47 @@
 {% load staticfiles %}
 {% block content %}
 
-<label for="">Nome: </label>
-<input type="name" type="text">
+<div class="pag-login">
+
+    <div class="entrar">
+        <h1>Ja possui conta?</h1>
+
+        <label for="">Nome de Usuario: </label>
+        <input name="username" type="text">
+
+        <label for="">Senha: </label>
+        <input name="senha" type="password">
+
+        <input type="submit" value="Entrar">
+
+    </div>
+
+    <div class="cadastrar">
+        <h1>Ainda não possui uma conta?</h1>
+        <h2>Cadastre-se!</h2>
+
+        <label for="">Nome Completo: </label>
+        <input name="nome" type="text">
+
+        <label for="">Nome de Usuario: </label>
+        <input name="username" type="text">
+
+        <label for="">E-mail: </label>
+        <input name="email" type="email">
+
+        <label for="">Confirme o E-mail: </label>
+        <input name="email" type="email">
+
+        <label for="">Senha: </label>
+        <input name="senha" type="password">
+
+        <label for="">Confirme sua senha: </label>
+        <input name="senha" type="password">
+
+        <input type="submit" value="Cadastrar">
+
+    </div>
+
+</div>
 
 {% endblock %}
