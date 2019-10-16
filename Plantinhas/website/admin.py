@@ -3,7 +3,7 @@ from website.models import *
 
 # Register your models here.
 admin.site.register(Usuario)
-admin.site.register(Regiao)
+admin.site.register(Clima)
 admin.site.register(Intencao)
 admin.site.register(Espaco)
 admin.site.register(Planta)

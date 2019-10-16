@@ -8,16 +8,17 @@ class Usuario(models.Model):
     nome  = models.CharField(max_length=255, verbose_name='Nome')
     username = models.CharField(max_length=50, verbose_name='Username')
     senha = models.CharField(max_length=16, verbose_name='Senha')
+    email = models.EmailField(verbose_name='Email')
 
     def __int__ (self):
         return self.codigo
 
-class Regiao(models.Model): ##mudar para clima
+class Clima(models.Model): ##mudar para clima
     codigo = models.AutoField(primary_key=True)
     nome = models.CharField(max_length=255, verbose_name='Nome')
 
-    def __int__ (self):
-        return self.codigoS
+    def __srt__ (self):
+        return self.nome
 
 class Intencao(models.Model):
     codigo = models.AutoField(primary_key=True)
@@ -30,7 +31,8 @@ class Espaco(models.Model):
     codigo = models.AutoField(primary_key=True)
     lugar = models.CharField(max_length=255, verbose_name='lugar')
     tamanho = models.CharField(max_length=255, verbose_name='tamanho')
-    codRegiao = models.ForeignKey(Regiao, on_delete=None) ##mudar para clima
+    solo = models.CharField(max_length=255, verbose_name='solo')
+    codClima = models.ForeignKey(Clima, on_delete=None) ##mudar para clima
     ##adicionar o espaço para o tipo de solo
 
     def __int__ (self):
