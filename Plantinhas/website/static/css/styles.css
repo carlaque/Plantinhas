@@ -9,3 +9,48 @@
     flex-direction: column;
     justify-content: center;
 }
+
+body{
+    margin: 0%;
+}
+
+.pag-index {
+    display: grid;
+    grid-template-areas: 'main main main main'
+                         'header header header header'
+                         'section section section section'
+                         'footer footer footer footer';
+    grid-template-columns: 25vw 25vw 25vw;
+    grid-template-rows: 40vh 60vh 10vh;    
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #3E8914;
+    margin: none;
+}
+
+.pag-index main{
+    grid-area: main;
+    background-color: aqua;
+}
+
+.pag-index header{
+    grid-area: header;
+}
+
+section{
+    grid-area: section;
+}
+
+footer{
+    grid-area: footer;
+}
+
+nav a{
+    text-decoration: none;
+    font-size: 18px;
+    color: #DCF4AB;
+}
