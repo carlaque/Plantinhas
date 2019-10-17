@@ -1,35 +1,48 @@
-*{
-    color: #0B380B;
-}
 body{
     background-color: #DCF4AB ;
+    color: #0B380B;
+    margin: 0;
 }
-.cadastrar label{
-    margin-top: 10px;
-}
+
 .entrar, .cadastrar{
+    /* background-color: rgba(63, 137, 20); */
+    border:5px solid #3E8914;
+    /* color: #DCF4AB; */
     display: flex;
     flex-direction: column;
 }
-
+.cadastrar{
+    border-top-width: 0;
+    border-right-width: 0;
+    height: 75vh;
+    margin-top:20px;
+    padding: 40px;
+    padding-top: 20px;
+    width: 30vw;
+}
+.cadastrar h1{
+    margin: 0px;
+}
 .entrar{
+    border-bottom-width: 0;
+    border-left-width: 0;
+    height: 45vh;
     justify-content: center;
-    border-right: black;
+    margin-top: -25vh;
+    padding: 25px;
+    width: 20vw;
 }
 .pag-login{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    align-items: center;
 }
-
-.entrar, .cadastrar{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-body{
-    margin: 0%;
+.pag-login img{
+    margin-left: -40vw;
+    margin-top: 50vh;
+    opacity: 0.7;
+    width: 20vw;
 }
 
 .pag-index {
@@ -71,6 +84,9 @@ nav a{
     text-decoration: none;
     font-size: 18px;
     color: #DCF4AB;
+
+}
+
 input{
     background-color:white;
     border-color: #0B380B;
@@ -81,13 +97,16 @@ input{
     padding: 2.5px;
 }
 
-input:nth-last-child(1){
-    margin: 50px;
-    padding: 10px;
+.pag-login button{ /* botoes*/
+    border: none;
+    font-size: 12pt;
+    margin: 7%;
+    padding: 4%;
     background-color: #0B380B;
     color: #DCF4AB;
 }
 
 label{
     font-size: 16pt;
+    margin-top: 15px;
 }

@@ -4,43 +4,53 @@
 
 <div class="pag-login">
 
-    <div class="entrar">
-        <h1>Ja possui conta?</h1>
+    <form action="login/" method="post">
+        {% csrf_token %}
+        <div class="entrar">
+            <h1>Ja possui conta?</h1>
 
-        <label for="">Nome de Usuario: </label>
-        <input name="username" type="text">
+            <label for="">Nome de Usuario: </label>
+            <input name="usernameE" type="text">
 
-        <label for="">Senha: </label>
-        <input name="senha" type="password">
+            <label for="">Senha: </label>
+            <input name="senhaE" type="password">
 
-        <input type="submit" value="Entrar" style="margin-top: 20px;">
+            <button type="submit" value="Entrar" name="entrar">Entrar</button>
+        </div>
+    </form>
 
-    </div>
+    <img src="{% static 'imagens/p-vaso.png' %}" alt="plantinha">
 
-    <div class="cadastrar">
-        <h1>Ainda não possui uma conta?</h1>
 
-        <label for="">Nome Completo: </label>
-        <input name="nome" type="text">
+    <form action="login/" method="POST">
+        {% csrf_token %}
+        <div class="cadastrar">
 
-        <label for="">Nome de Usuario: </label>
-        <input name="username" type="text">
+            <h1>Ainda não possui uma conta?</h1>
 
-        <label for="">E-mail: </label>
-        <input name="email" type="email">
+            <label for="">Nome Completo: </label>
+            <input name="nomeC" type="text">
 
-        <label for="">Confirme o E-mail: </label>
-        <input name="email" type="email">
+            <label for="">Nome de Usuario: </label>
+            <input name="usernameC" type="text">
 
-        <label for="">Senha: </label>
-        <input name="senha" type="password">
+            <label for="">E-mail: </label>
+            <input name="emailC" type="email">
 
-        <label for="">Confirme sua senha: </label>
-        <input name="senha" type="password">
+            <label for="">Confirme o E-mail: </label>
+            <input name="emailC" type="email">
 
-        <input type="submit" value="Cadastrar" style="margin-top: 20px;">
+            <label for="">Senha: </label>
+            <input name="senhaC" type="password">
 
-    </div>
+            <label for="">Confirme sua senha: </label>
+            <input name="senhaC" type="password">
+
+            <button type="submit" value="Cadastrar" name="cadastrar">Cadastrar</button>
+
+        </div>
+    </form>
+
 
 </div>
 
