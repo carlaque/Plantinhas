@@ -3,30 +3,34 @@
 {% block content %}
 
 <div class="pag-login">
-
-    <form action="login/" method="post">
+    
+    
+    <form  method="post">
         {% csrf_token %}
         <div class="entrar">
             <h1>Ja possui conta?</h1>
-
+            
+            {{msgErro}}
+            
             <label for="">Nome de Usuario: </label>
             <input name="usernameE" type="text">
 
             <label for="">Senha: </label>
             <input name="senhaE" type="password">
-
+            
             <button type="submit" value="Entrar" name="entrar">Entrar</button>
         </div>
     </form>
-
+    
     <img src="{% static 'imagens/p-vaso.png' %}" alt="plantinha">
 
 
-    <form action="login/" method="POST">
+    <form  method="POST">
         {% csrf_token %}
         <div class="cadastrar">
 
             <h1>Ainda não possui uma conta?</h1>
+            {{msgCad}}
 
             <label for="">Nome Completo: </label>
             <input name="nomeC" type="text">

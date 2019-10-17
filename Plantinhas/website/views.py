@@ -7,29 +7,32 @@ def index(request):
 
 
 def login(request):
-    args = ''
 
     if request.method == "POST":
         if 'cadastrar' in request.POST:
             data = Usuario()
-            data.nome = request.POST['nome']
-            data.username = request.POST['username']
-            data.email = request.POST['email']
-            data.senha = request.POST['senha']
+            data.nome = request.POST['nomeC']
+            data.username = request.POST['usernameC']
+            data.email = request.POST['emailC']
+            data.senha = request.POST['senhaC']
             data.save()
-            
+            args={
+                'msgCad': 'Cadastrado com sucesso! Faça o login ao lado.'
+            }
             return render(request, 'login.html', args)
 
         elif 'entrar' in request.POST:
             user = request.POST['usernameE']
             senha  = request.POST['senhaE']
-            logado = Usuario.objects.filter(username = user , senha = senha).first()
+            logado = Usuario.objects.filter(username = user, senha = senha). first()
 
             if logado is not None:
-                #login com sucesso return
-                return render(request, 'index.html', args)
+                #FAZER O REDIRECT PARA A PAGINA DO USUARIO
+                return render(request, 'index.html')
             else:
-                #alguma coisa esta errado retunr
+                args = {
+                    'msgErro': 'Ops! Algo de errado não esta certo... por favor tente novamente'
+                }
                 return render(request, 'login.html', args)
 
 

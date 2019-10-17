@@ -32,6 +32,10 @@ body{
     padding: 25px;
     width: 20vw;
 }
+h4{
+    margin: 0px;
+    background-color: black;
+}
 .pag-login{
     display: flex;
     flex-direction: row;
