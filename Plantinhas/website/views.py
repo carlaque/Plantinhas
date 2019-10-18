@@ -35,7 +35,26 @@ def login(request):
                 }
                 return render(request, 'login.html', args)
 
-
-
     
     return render(request, 'login.html')
+
+def plantasCad(request):
+    
+    listar_local = Clima.objects.all()
+    listar_tipo = Intencao.objects.all()
+
+    args = None
+    if listar_local.first() is None and listar_tipo.first() is None:
+        args = {
+            'msg' : 'Nada cadastrado ainda'
+        }
+    else:
+        args = {
+            'listar_local' : listar_local,
+            'listar_tipo'  : listar_tipo
+        }
+
+
+    return render(request, 'plantas-cadastro.html', args)
+
+

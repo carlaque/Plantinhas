@@ -5,9 +5,7 @@ body{
 }
 
 .entrar, .cadastrar{
-    /* background-color: rgba(63, 137, 20); */
     border:5px solid #3E8914;
-    /* color: #DCF4AB; */
     display: flex;
     flex-direction: column;
 }
@@ -112,5 +110,46 @@ input{
 
 label{
     font-size: 16pt;
-    margin-top: 15px;
+    margin-top: 10px;
+}
+
+/* pagina de cadastrar as plantas */
+.pag-planta-cad{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+    padding-top: -10%;
+}
+
+.plant-main, .espaco{
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+     margin-bottom: 0;
+    text-align: center;
+    position: relative;
+}
+
+.pag-planta-cad select{
+    height: 5vh;
+    font-size: 14pt;
+}
+.espaco{
+    justify-content: space-evenly;
+}
+
+.espaco img{
+    width: 30vw;
+}
+
+.pag-planta-cad button{ /* botoes*/
+    border: none;
+    font-size: 12pt;
+    margin: 7%;
+    padding: 4%;
+    background-color: #0B380B;
+    color: #DCF4AB;
 }
