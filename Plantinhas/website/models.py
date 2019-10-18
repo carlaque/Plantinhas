@@ -32,8 +32,7 @@ class Espaco(models.Model):
     lugar = models.CharField(max_length=255, verbose_name='lugar')
     tamanho = models.CharField(max_length=255, verbose_name='tamanho')
     solo = models.CharField(max_length=255, verbose_name='solo', null=True)
-    codClima = models.ForeignKey(Clima, on_delete=None) ##mudar para clima
-    ##adicionar o espaço para o tipo de solo
+    codClima = models.ForeignKey(Clima, on_delete=None) 
 
     def __int__ (self):
         return self.codigo
@@ -41,7 +40,7 @@ class Espaco(models.Model):
 class Planta(models.Model):
     codigo = models.AutoField(primary_key=True)
     nome = models.CharField(max_length=255, verbose_name='nome', unique=True)
-    diasRegar = models.IntegerField(null=True)
+    diasRegar = models.CharField(max_length=255, null=True)
     luz = models.BooleanField()
     colher = models.CharField(max_length=255, verbose_name='colher')
     podar = models.CharField(max_length=255, verbose_name='podar')

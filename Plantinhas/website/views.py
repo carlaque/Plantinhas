@@ -46,26 +46,31 @@ def plantasCad(request):
         e = Espaco()
         e.lugar = request.POST['lugar']
         e.tamanho = request.POST['tamanho']
-        e.codClima = request.POST['Local']
+        e.codClima = Clima.objects.filter(codigo=request.POST['Local']).first()
         e.solo = request.POST['solo']
         e.save()
 
         p = Planta()
         p.nome = request.POST['nome']
         p.diasRegar = request.POST['diasRegar']
-        p.luz = request.POST['luz']
+        
+        if 'luz' in request.POST:
+            p.luz = True
+        else: 
+            p.luz = False
+        
+        if 'venenosa' in request.POST:
+            p.venenosa = True
+        else: 
+            p.venenosa = False
+        
         p.colher = request.POST['colher']
         p.podar = request.POST['podar']
-        p.codTipo = request.POST['tipo']
-        p.codEspaco = Espaco.objects.last().codigo       
+        p.codTipo = Intencao.objects.filter(codigo = request.POST['tipo']).first()
+        p.codEspaco = Espaco.objects.filter(codClima = request.POST['Local'], tamanho = request.POST['tamanho'], lugar = request.POST['lugar']).last()
         p.observacoes = request.POST['obs']
         p.save()
-        
-        args = {
-            'msg': 'cad sucesso gay'
-        }
 
-        return render(request, 'plantas-cadastro.html', args)
 
     
     listar_local = Clima.objects.all()
