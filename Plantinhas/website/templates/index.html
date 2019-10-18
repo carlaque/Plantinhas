@@ -4,19 +4,45 @@
 
 <div class="pag-index">
     <main>
-        <h1>aaaaaa</h1>
+        <h1>SLIDE SHOW HERE</h1>
         <!-- imagens -->
         <!-- javascript -->
         <!-- fundo #DCF4AB -->
     </main>
-    <header>
-        <h3>Ache um planta para você</h3>
-        <button></button>
+    <header>]
+        <div>
+            <h3 class="ache_uma_planta">Ache um planta para você</h3>
+        </div>
+        <form  method="post">
+            {% csrf_token %}
+            <div class="pesquisar_plantinha">
+                <h3>Qual a região onde pretende plantar ?</h3>
+                <select name="clima">
+                    <option value="clima">Norte</option>
+                    <option value="clima">Nordeste</option>
+                    <option value="clima">Centro-Oeste</option>
+                    <option value="clima">Suldeste</option>
+                    <option value="clima">Sul</option>
+                </select>
+                <h3>Em qual tipo de local você quer plantar ?</h3>
+                <select name="espaço">
+                    <option value="espaco">Solo</option> 
+                    <option value="espaco">Parede</option> 
+                </select>
+                <h3>Qual é a intenção do seu plantio?</h3>
+                <select name="intencao">
+                    <option value="intecao">Decoração</option>
+                    <option value="intecao">Temperos e chás</option>
+                    <option value="intecao">Panc's</option>
+                </select>
+        <div class="pesquisar-img">
+            <img src="{% static 'imagens/grass-310691_960_720.png' %}" alt="grass">
+        </div>
     </header>
     <section>
         <h2>Sobre nós</h2>
         <div>
-            <h3>motivo</h3>
+            <h3>Motivo</h3>
         </div>
         <div>
             <h3>Beneficios</h3>
