@@ -56,8 +56,12 @@ h4{
 
 .pesquisar_plantinha{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+}
+
+.pesquisar_regiao{
+margin: 1,1,1,1;
 }
 
 .pag-index {
@@ -107,16 +111,34 @@ nav{
 .pag-index header{
     grid-area: header;
     display: flex;
+    flex-direction: column;
+
+}
+
+.sobrenos{
+    display: flex;
     justify-content: center;
+    align-items: center;
+    
+}
+
+.motivos{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .pag-index header div img{
-    max-width:200px;
-    max-height:150px;
+    margin: 0;
+    max-width: 1000px;
+    max-height: 82px;
 }
 
 section{
     grid-area: section;
+    flex-direction: column;
+
+
 }
 
 footer{
