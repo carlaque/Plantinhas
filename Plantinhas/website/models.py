@@ -25,7 +25,7 @@ class Intencao(models.Model):
     tipo = models.CharField(max_length=255,verbose_name='Tipo')
 
     def __str__ (self):
-        return self.tipo
+        return self.tipo    
 
 class Espaco(models.Model):
     codigo = models.AutoField(primary_key=True)

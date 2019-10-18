@@ -4,6 +4,7 @@
 
 <h1>Insira os dados da plantinha:</h1>
 <form action="" method="post">
+    {% csrf_token %}
     <div class="pag-planta-cad">
 
         <div class="plant-main">
@@ -12,7 +13,7 @@
             <input type="text" name="nome" id="">
 
             <label for="">Quantos dias de semana deve ser regada?</label>
-            <input type="text" name="diasRegar" id="">
+            <input type="number" name="diasRegar" id="">
 
             <label for="">Precisa de muita luz:
                 <input type="checkbox" name="luz" id=""> Venenosa:
@@ -29,7 +30,7 @@
             <label for="">Intenção: </label>
             <select name="tipo" id="">
                 {% for item in listar_tipo %}
-                <option value="Tipo">{{item.tipo}}</option>
+                <option value="{{item.codigo}}">{{item.tipo}}</option>
                 {% endfor %}
             </select>
 
@@ -39,7 +40,7 @@
         </div>
         <div class="espaco">
 
-            <h2 style="margin-bottom: 0;">Sobre o espaço:</h2>
+            <!-- <h2 style="margin-bottom: 0;">Sobre o espaço:</h2> -->
 
             <label for="">Em que lugar ela ficará: </label>
             <input type="text" name="lugar" id="">
@@ -47,10 +48,13 @@
             <label for="">O tamanho do espaço que precisa (em centimetros): </label>
             <input type="text" name="tamanho" id="">
 
+            <label for="">Sobre o solo:</label>
+            <input type="text" name="solo" id="">
+
             <label for="">O Local:</label>
             <select name="Local" id="">
                 {% for item in listar_local %}
-                <option value="Local">{{item.nome}}</option>
+                <option value="{{item.codigo}}">{{item.nome}}</option>
                 {% endfor %}
             </select>
 

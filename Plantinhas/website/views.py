@@ -39,6 +39,32 @@ def login(request):
     return render(request, 'login.html')
 
 def plantasCad(request):
+
+    if request.method == 'POST':
+        e = Espaco()
+        e.lugar = request.POST['lugar']
+        e.tamanho = request.POST['tamanho']
+        e.codClima = request.POST['Local']
+        e.solo = request.POST['solo']
+        e.save()
+
+        p = Planta()
+        p.nome = request.POST['nome']
+        p.diasRegar = request.POST['diasRegar']
+        p.luz = request.POST['luz']
+        p.colher = request.POST['colher']
+        p.podar = request.POST['podar']
+        p.codTipo = request.POST['tipo']
+        p.codEspaco = Espaco.objects.last().codigo       
+        p.observacoes = request.POST['obs']
+        p.save()
+        
+        args = {
+            'msg': 'cad sucesso gay'
+        }
+
+        return render(request, 'plantas-cadastro.html', args)
+
     
     listar_local = Clima.objects.all()
     listar_tipo = Intencao.objects.all()
@@ -53,7 +79,6 @@ def plantasCad(request):
             'listar_local' : listar_local,
             'listar_tipo'  : listar_tipo
         }
-
 
     return render(request, 'plantas-cadastro.html', args)
 
