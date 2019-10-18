@@ -1,5 +1,8 @@
 from django.shortcuts import render, redirect
 from website.models import *
+from django.db.models import Q
+
+
 
 # Create your views here.
 def index(request):
@@ -26,7 +29,7 @@ def login(request):
         elif 'entrar' in request.POST:
             user = request.POST['usernameE']
             senha  = request.POST['senhaE']
-            logado = Usuario.objects.filter(username = user, senha = senha). first()
+            logado = Usuario.objects.filter(username = user, senha = senha).first()
 
             if logado is not None:
                 #FAZER O REDIRECT PARA A PAGINA DO USUARIO
@@ -89,4 +92,34 @@ def plantasCad(request):
 
     return render(request, 'plantas-cadastro.html', args)
 
+def plantas(request):
+    
+    if request.method == 'GET':
+        
+        nome = request.GET.get('nome')
+        espaco = request.GET.get('espaco')
+        intencao = request.GET.get('intencao')
+        temp = request.GET.get('temperatura')
+
+        
+        # for c in Espaco.objects.filter(codClima=Clima.objects.filter(nome=espaco).first()).distinct():
+        #     p = Planta.objects.filter(codEspaco = c).all()
+        plantas = {}
+        for p in Espaco.objects.filter(lugar = espaco, codClima = temp).all():
+            if nome != '' :
+                plantas = Planta.objects.filter(Q(nome=nome) & Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) | Q(codTipo=intencao)).distinct()
+            else:
+                plantas = Planta.objects.filter(Q(nome=nome) | Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) | Q(codTipo=intencao)).distinct()
+            
+
+
+        args = {
+            'plantas' : plantas
+        }
+        return render(request, 'plantas.html', args)
+
+    args = {
+        'plantas' : Planta.objects.all()
+    }
+    return render(request, 'plantas.html', args)
 

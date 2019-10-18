@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="pag-plantas">
+
+    <main>
+        <form action="" method="get">
+            <h1>Ache uma plantinha!!!</h1>
+            <input type="text" name="nome" id="busca" placeholder="Busque por um nome">
+
+            <label for="">Em qual tipo de local você quer plantar ?</label>
+            <select name="espaco" id="busca">
+                <option value="Vaso">Vaso</option>
+                <option value="Chão">Chão</option>
+                <option value="Suspensa">Suspensa</option>
+            </select>
+
+            <label for="">Qual a Intenção?</label>
+            <select name="intencao" id="busca">
+                <option value="1">Decorativa</option>
+                <option value="2">Tempero</option>
+                <option value="3">Chá</option>
+                <option value="4">PANC</option>
+            </select>
+
+            <label for="">A Temperatura local é: </label>
+            <select name="temperatura" id="busca">
+                <option value="6">Alta</option>
+                <option value="5">Amena</option>
+                <option value="4">Baixa</option>
+                <option value="3">Muito Baixa</option>
+            </select>
+            <button type="submit">Ver</button>
+        </form>
+    </main>
+
+    <section>
+
+        {% for planta in plantas %}
+            <div class="planta">
+                <p>Nome: {{planta.nome}}</p>
+                <p>Intenção: {{planta.codTipo}}</p>
+                <p>Lugar: {{planta.codEspaco.lugar}}</p>            
+                <p>Temperatura: {{planta.codEspaco.codClima.nome}}</p> 
+            </div>
+        {% endfor %}
+
+    </section>
+
+    <footer>
+
+    </footer>
+
+</div>
+
+{% endblock %}

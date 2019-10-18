@@ -16,7 +16,7 @@
             <input type="text" name="diasRegar" id="">
 
             <label for="">
-                Precisa de muita luz: <input type="checkbox" name="luz" id="" >
+                Precisa de muita luz: <input type="checkbox" name="luz" id="">
                 Venenosa: <input type="checkbox" name="venenosa" id="">
             </label>
 
@@ -42,8 +42,12 @@
 
             <!-- <h2 style="margin-bottom: 0;">Sobre o espaço:</h2> -->
 
-            <label for="">Em que lugar ela ficará: </label>
-            <input type="text" name="lugar" id="">
+            <label for="">Em que lugar se recomenda ficar: </label>
+            <select name="lugar" id="">
+                <option value="vaso">Vaso</option>
+                <option value="chao">Chão</option>
+                <option value="suspensa">Suspensa</option>
+            </select>
 
             <label for="">O tamanho do espaço que precisa (em centimetros): </label>
             <input type="text" name="tamanho" id="">
@@ -51,7 +55,7 @@
             <label for="">Sobre o solo:</label>
             <input type="text" name="solo" id="">
 
-            <label for="">O Local:</label>
+            <label for="">Sobre a Temperatura:</label>
             <select name="Local" id="">
                 {% for item in listar_local %}
                 <option value="{{item.codigo}}">{{item.nome}}</option>

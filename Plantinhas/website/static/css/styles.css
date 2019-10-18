@@ -134,14 +134,13 @@ nav{
     max-height: 82px;
 }
 
-section{
+.pag-index section{
     grid-area: section;
     flex-direction: column;
 
-
 }
 
-footer{
+.pag-index  footer{
     grid-area: footer;
 }
 
@@ -215,4 +214,34 @@ h1{
     padding: 4%;
     background-color: #0B380B;
     color: #DCF4AB;
+}
+
+
+/* PAGINA DAS PLANTAS -- PESQUISA/INDICAÇÃO */
+
+.pag-plantas{
+    display: grid;
+    grid-template-areas: 'main main main main'
+                         'section section section section'
+                         'footer footer footer footer';
+    grid-template-columns: 25vw 25vw 25vw;
+    grid-template-rows: 40vh 60vh 10vh;  
+}
+.pag-plantas main{
+    grid-area: main;
+}
+
+.pag-plantas section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    grid-area: section;
+}
+
+.pag-plantas footer{
+    grid-area: footer;
+}
+
+.pag-plantas section div{
+    background-color: black;
 }
