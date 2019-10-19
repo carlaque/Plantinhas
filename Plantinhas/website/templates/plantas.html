@@ -2,48 +2,60 @@
 {% load staticfiles %}
 {% block content %}
 
+<h1>Ache uma plantinha!!!</h1>
 <div class="pag-plantas">
 
     <main>
         <form action="" method="get">
-            <h1>Ache uma plantinha!!!</h1>
+
             <input type="text" name="nome" id="busca" placeholder="Busque por um nome">
 
-            <label for="">Em qual tipo de local você quer plantar ?</label>
-            <select name="espaco" id="busca">
-                <option value="Vaso">Vaso</option>
-                <option value="Chão">Chão</option>
-                <option value="Suspensa">Suspensa</option>
-            </select>
+            <div>
+                <label for="">Em qual tipo de local você quer plantar ?
+                    <select name="espaco" id="busca">
+                        <option value="Vaso">Vaso</option>
+                        <option value="Chão">Chão</option>
+                        <option value="Suspensa">Suspensa</option>
+                    </select>
+                </label>
 
-            <label for="">Qual a Intenção?</label>
-            <select name="intencao" id="busca">
-                <option value="1">Decorativa</option>
-                <option value="2">Tempero</option>
-                <option value="3">Chá</option>
-                <option value="4">PANC</option>
-            </select>
+                <label for="">Qual a Intenção?
+                    <select name="intencao" id="busca">
+                        <option value="1">Decorativa</option>
+                        <option value="2">Tempero</option>
+                        <option value="3">Chá</option>
+                        <option value="4">PANC</option>
+                    </select>
+                </label>
 
-            <label for="">A Temperatura local é: </label>
-            <select name="temperatura" id="busca">
-                <option value="6">Alta</option>
-                <option value="5">Amena</option>
-                <option value="4">Baixa</option>
-                <option value="3">Muito Baixa</option>
-            </select>
-            <button type="submit">Ver</button>
+                <label for="">A Temperatura local é:
+                    <select name="temperatura" id="busca">
+                        <option value="6">Alta</option>
+                        <option value="5">Amena</option>
+                        <option value="4">Baixa</option>
+                        <option value="3">Muito Baixa</option>
+                    </select>
+                </label>
+                
+                <button type="submit"></button>
+
+            </div>
         </form>
     </main>
 
-    <section>
+    <section class="exibicao">
 
         {% for planta in plantas %}
-            <div class="planta">
-                <p>Nome: {{planta.nome}}</p>
-                <p>Intenção: {{planta.codTipo}}</p>
-                <p>Lugar: {{planta.codEspaco.lugar}}</p>            
-                <p>Temperatura: {{planta.codEspaco.codClima.nome}}</p> 
-            </div>
+        <div class="planta">
+            <img src="{% static 'imagens/vaso-amarela.png' %}" alt="">
+            <label>
+                <p><strong>Nome:</strong> {{planta.nome}}
+                    <strong>Intenção:</strong> {{planta.codTipo}}</p>
+                <p><strong>Lugar:</strong> {{planta.codEspaco.lugar}}
+                    <strong>Temperatura:</strong> {{planta.codEspaco.codClima.nome}}</p>
+            </label>
+            <button>Ver mais</button>
+        </div>
         {% endfor %}
 
     </section>
