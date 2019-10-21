@@ -7,11 +7,11 @@
     <form  method="POST">
         {% csrf_token %}
         <div class="entrar">
-            <h1>Ja possui conta?</h1>
+            <h1>Já possui conta?</h1>
             
             {{msgErro}}
             
-            <label for="">Nome de Usuario: </label>
+            <label for="">Nome de usuário: </label>
             <input name="usernameE" type="text">
 
             <label for="">Senha: </label>
@@ -31,16 +31,16 @@
             <h1>Ainda não possui uma conta?</h1>
             {{msgCad}}
 
-            <label for="">Nome Completo: </label>
+            <label for="">Nome completo: </label>
             <input name="nomeC" type="text">
 
-            <label for="">Nome de Usuario: </label>
+            <label for="">Nome de usuário: </label>
             <input name="usernameC" type="text">
 
             <label for="">E-mail: </label>
             <input name="emailC" type="email">
 
-            <label for="">Confirme o E-mail: </label>
+            <label for="">Confirme o e-mail: </label>
             <input name="emailC" type="email">
 
             <label for="">Senha: </label>

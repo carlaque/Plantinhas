@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% block content %}
 
-<h1>Insira os dados da plantinha:</h1>
+<h1>Insira os dados da nova plantinha:</h1>
 <form action="" method="post">
     {% csrf_token %}
     <div class="pag-planta-cad">
@@ -12,22 +12,23 @@
             <label for="">Nome:</label>
             <input type="text" name="nome" id="">
 
-            <label for="">Quantos dias de semana deve ser regada?</label>
+            <label for="">Quantas vezes por semana deve ser regada?</label>
             <input type="text" name="diasRegar" id="">
 
-            <label for="">
-                Precisa de muita luz: <input type="checkbox" name="luz" id="">
-                Venenosa: <input type="checkbox" name="venenosa" id="">
-            </label>
+            <label for="">Pode ficar exposta ao sol direto?</label>
+            <input type="checkbox" name="luz" id="">
+
+            <label for=""> Venenosa? </label>
+            <input type="checkbox" name="venenosa" id="">            
 
             <label for="">Sobre a colheita: </label>
             <input type="text" name="colher" id="">
 
-            <label for="">Sobre a podagem: </label>
+            <label for="">Sobre a poda: </label>
             <input type="text" name="podar" id="">
 
 
-            <label for="">Intenção: </label>
+            <label for="">Pra que serve a plantinha? </label>
             <select name="tipo" id="">
                 {% for item in listar_tipo %}
                 <option value="{{item.codigo}}">{{item.tipo}}</option>
@@ -45,13 +46,13 @@
                 <option value="suspensa">Suspensa</option>
             </select>
 
-            <label for="">O tamanho do espaço que precisa (em centimetros): </label>
+            <label for="">O tamanho do espaço que precisa (em centímetros): </label>
             <input type="text" name="tamanho" id="">
 
             <label for="">Sobre o solo:</label>
             <input type="text" name="solo" id="">
 
-            <label for="">Sobre a Temperatura:</label>
+            <label for="">Sobre a temperatura:</label>
             <select name="Local" id="">
                 {% for item in listar_local %}
                 <option value="{{item.codigo}}">{{item.nome}}</option>
