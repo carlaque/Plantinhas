@@ -123,3 +123,5 @@ def plantas(request):
     }
     return render(request, 'plantas.html', args)
 
+def jardimCad(request, codigo):
+    return render(request, 'jardim-cadastro.html')

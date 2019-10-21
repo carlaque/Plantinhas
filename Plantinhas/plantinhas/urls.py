@@ -22,5 +22,6 @@ urlpatterns = [
     path('', views.index),
     path('login/', views.login),
     path('plantas/cadastrar/', views.plantasCad),
-    path('plantas/', views.plantas)
+    path('plantas/', views.plantas),
+    path('<int:codigo>/jardim/cadastro', views.jardimCad)
 ]
