@@ -1,8 +1,21 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block content %}
+<h1>Esses são os seus jardins:</h1>
+<div class="pag-usuario">
 
-
+    
+    
+    {% for jardim in jardins %}
+    <a href="">{{jardim.nome}}</a>
+    {% endfor %}
+    
+    <div class="add-jardim">
+        <button onclick="/jardim/cadastro/{{codigo}}">
+            Criar um novo jardim
+        </button>
+    </div>
+</div>
 
 
 {% endblock %}

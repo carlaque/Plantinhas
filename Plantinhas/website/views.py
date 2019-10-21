@@ -143,7 +143,10 @@ def usuario(request, codigo):
     if codigo != '':
         dados = Usuario.objects.filter(codigo = codigo).first()
     
+    jardins = Jardim.objects.filter(codUsuario = 1).first()
+
     args = {
-        'dados' : dados.nome
+        'dados' : dados,
+        'jardins' : jardins
     }
     return render(request, 'usuario.html', args)
