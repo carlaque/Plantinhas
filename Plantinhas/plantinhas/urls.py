@@ -19,9 +19,10 @@ from website import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index),
+    path('/', views.index),
     path('login/', views.login),
-    path('plantas/cadastrar/', views.plantasCad),
-    path('plantas/', views.plantas),
-    path('<int:codigo>/jardim/cadastro', views.jardimCad)
+    path('plantas/cadastrar/<int:codigo>', views.plantasCad),
+    path('plantas/<int:codigo>', views.plantas),
+    path('jardim/cadastro/<int:codigo>', views.jardimCad),
+    path('usuario/<int:codigo>', views.usuario)
 ]

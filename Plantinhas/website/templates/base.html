@@ -7,15 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script defer src="{% static 'scripts/scripts.js' %}"></script>
     <title>Plantinhas</title>
 </head>
 <body>
     <nav>
-        <a href="">Início</a>
+        <a href="/">Início</a>
         <a href="">Plantas</a>
         <a href="">Sobre nós</a>
-        <a href="">Login</a>
+        <a href="/login">Login</a>
     </nav>
+    <!-- <h2>hello {{dados.nome}}</h2> -->
 
 {% block content %}
 

@@ -5,8 +5,15 @@ from django.db.models import Q
 
 
 # Create your views here.
-def index(request):
-    return render(request, 'index.html')
+def index(request, codigo):
+    dados = {}
+    if codigo != '':
+        dados = Usuario.objects.filter(codigo = codigo).first()
+    
+    args = {
+        'dados' : dados.nome
+    }
+    return render(request, 'index.html', args)
 
 
 
@@ -33,7 +40,12 @@ def login(request):
 
             if logado is not None:
                 #FAZER O REDIRECT PARA A PAGINA DO USUARIO
-                return render(request, 'index.html')
+                args = {
+                    'dados' : logado.codigo
+                }
+                # return render(request, 'usuario.html', args)
+                aux = '/usuario/' + str(logado.codigo)
+                return redirect(aux, args)
             else:
                 args = {
                     'msgErro': 'Ops! Algo de errado não esta certo... por favor tente novamente'
@@ -43,7 +55,7 @@ def login(request):
     
     return render(request, 'login.html')
 
-def plantasCad(request):
+def plantasCad(request, codigo):    
 
     if request.method == 'POST':
         e = Espaco()
@@ -92,8 +104,8 @@ def plantasCad(request):
 
     return render(request, 'plantas-cadastro.html', args)
 
-def plantas(request):
-    
+def plantas(request, codigo):
+
     if request.method == 'GET':
         
         nome = request.GET.get('nome')
@@ -110,18 +122,28 @@ def plantas(request):
                 plantas = Planta.objects.filter(Q(nome=nome) & Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) | Q(codTipo=intencao)).distinct()
             else:
                 plantas = Planta.objects.filter(Q(nome=nome) | Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) | Q(codTipo=intencao)).distinct()
-            
-
 
         args = {
-            'plantas' : plantas
+            'plantas' : plantas,
+            'codigo' : codigo
         }
         return render(request, 'plantas.html', args)
 
     args = {
+        'dados' : dados,
         'plantas' : Planta.objects.all()
     }
     return render(request, 'plantas.html', args)
 
 def jardimCad(request, codigo):
     return render(request, 'jardim-cadastro.html')
+
+def usuario(request, codigo):
+    dados = {}
+    if codigo != '':
+        dados = Usuario.objects.filter(codigo = codigo).first()
+    
+    args = {
+        'dados' : dados.nome
+    }
+    return render(request, 'usuario.html', args)
