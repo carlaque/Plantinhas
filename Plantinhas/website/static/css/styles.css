@@ -259,8 +259,7 @@ h1{
     height: 5vh;
     font-size: 14pt;
     background-color: transparent;
-    width: 10vw;
-    
+    width: 10vw;  
 }
 .pag-plantas form div button{
     background: url('../imagens/lupa.png' ) ;
@@ -309,6 +308,7 @@ h1{
     text-align: left;
 }
 .planta button{
+    align-self: center;
     border: none;
     font-size: 12pt;
     height: 5vh;
@@ -320,4 +320,47 @@ h1{
 
 .pag-plantas footer{
     grid-area: footer;
+}
+
+/* PAGINA DE CADASTRO JARDIM */
+
+.pag-cad-jardim {
+    align-content: center;
+    display: flex;
+    justify-content: center;
+}
+.pag-cad-jardim form{
+    display: flex;
+    flex-direction: column;
+    height:50vh;
+    justify-content: space-between;
+    width:20vw;
+}
+
+.pag-cad-jardim form div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+.pag-cad-jardim select{
+    border-color: #0B380B;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    height: 5vh;
+    font-size: 14pt;
+    background-color: transparent;
+    
+}
+
+.pag-cad-jardim button{
+    align-self: center;
+    background-color: #0B380B;
+    color: #DCF4AB;
+    border: none;
+    font-size: 12pt;
+    height: 7vh;
+    width: 90%;
 }

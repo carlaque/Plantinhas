@@ -2,8 +2,36 @@
 {% load staticfiles %}
 {% block content %}
 
+<h1>Sobre seu novo jardim:</h1>
 <div class="pag-cad-jardim">
-    hello world
+    <form action="" method="post">
+
+        <label for="">Nome:</label>
+        <input type="text" name="nome" id="" placeholder="O nome que você quiser....">
+
+        <label for="" width:100%>
+            <input type="checkbox" name="ensolarado" id="">Tem sol nesse jardim!
+        </label>
+
+
+        <label for="">Intenção:</label>
+        <select name="intencao" id="">
+            <option value="1">Decorativa</option>
+            <option value="2">Tempero</option>
+            <option value="3">Chá</option>
+            <option value="4">PANC</option>
+        </select>
+
+        <label for="">O lugar das plantas:</label>
+        <select name="lugar" id="">
+            <option value="Vaso">Vaso</option>
+            <option value="Chão">Chão</option>
+            <option value="Suspensa">Suspensa</option>
+        </select>
+
+        <button type="submit">Agora ache uma plantinha!</button>
+    </form>
+
 </div>
 
 {% endblock %}
