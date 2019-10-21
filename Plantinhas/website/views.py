@@ -124,13 +124,13 @@ def plantas(request, codigo):
                 plantas = Planta.objects.filter(Q(nome=nome) | Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) | Q(codTipo=intencao)).distinct()
 
         args = {
-            'plantas' : plantas,
-            'codigo' : codigo
+            # 'dados' : dados,
+            'plantas' : plantas
         }
         return render(request, 'plantas.html', args)
 
     args = {
-        'dados' : dados,
+        # 'dados' : dados,
         'plantas' : Planta.objects.all()
     }
     return render(request, 'plantas.html', args)
