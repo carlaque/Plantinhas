@@ -5,16 +5,8 @@ from django.db.models import Q
 
 
 # Create your views here.
-def index(request, codigo):
-    dados = {}
-    if codigo != '':
-        dados = Usuario.objects.filter(codigo = codigo).first()
-    
-    args = {
-        'dados' : dados.nome
-    }
-    return render(request, 'index.html', args)
-
+def index(request):
+    return render(request, 'index.html')
 
 
 
