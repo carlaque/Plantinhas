@@ -148,10 +148,10 @@ nav a{
 }
 
 input{
-    background-color:white;
+    background-color: transparent;
     border-color: #0B380B;
     border-style: solid;
-    border-width: 1.5px;
+    border-width: 1px;
     border-radius: 5px;
     font-size: 12pt;
     padding: 2.5px;
@@ -180,11 +180,15 @@ label{
     padding-top: -10%;
 }
 
-.plant-main, .espaco{
+.plant-main{
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
 }
 
+.plant-main img{
+    width: 30vw;
+}
 h1{
      margin-bottom: 0;
     text-align: center;
@@ -192,16 +196,15 @@ h1{
 }
 
 .pag-planta-cad select{
+    border-color: #0B380B;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
     height: 5vh;
     font-size: 14pt;
-}
-.espaco{
-    justify-content: space-evenly;
+    background-color: transparent;
 }
 
-.espaco img{
-    width: 30vw;
-}
 
 .pag-planta-cad button{ /* botoes*/
     border: none;
