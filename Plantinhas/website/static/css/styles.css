@@ -1,5 +1,5 @@
 body{
-    background-color: black;
+    background-color: #DCF4AB;
     color: #0B380B;
     margin: 0;
 }
@@ -31,15 +31,15 @@ body{
     width: 20vw;
 }
 
-header{
+.pag-login header{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     grid-area: header;
-    background-color: black;
+    /* background-color: black; */
 }
 
-header h3{
+.pag-login header h3{
     color:  #146b71;
     font-size: 30px;
 }
