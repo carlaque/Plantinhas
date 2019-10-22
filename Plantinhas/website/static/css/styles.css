@@ -1,5 +1,5 @@
     body{
-    background-color:#B7CA79;
+    background-color: #F6E8B1;
     color: #0B380B;
     margin: 0;
 }
@@ -48,30 +48,51 @@
     width: 70%;
 }
 
-header h4{
-    color: #e3c4c6;
+.pag-index header h4{
+    color: #677E52;
     font-size: 18px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
 }
 
-.header_espaço{
+.pag-index header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_paragrafo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* h4{
+    align-self: center;
+} */
+
+.pag-index .header_espaço{
     width: 35px;
     display: flex;
     justify-content: space-around;
 }
 
-.header_linha{
+.pag-index .header_linha{
     height: 250px;
     width: 3px;
     background-color: #146b71;
 }
 
-.header_lanha{
+.pag-index .header_lanha{
     height: 3px;
     width: 700px;
     background-color: #146b71;
 }
 
-.header_opcoes{
+.pag-index .header_opcoes{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -115,9 +136,9 @@ header h4{
     font-size: 20px;
 }
 
-h4{
+.pag-index h4{
     margin: 0px;
-    background-color: black;
+    opacity: 1;
 }
 .pag-login{
     display: flex;
@@ -148,7 +169,7 @@ margin: 1,1,1,1;
                          'header header header header'
                          'section section section section'
                          'footer footer footer footer';
-    grid-template-columns: 25vw 25vw 25vw 25vw;
+    grid-template-columns: 24.7vw 24.7vw 24.7vw 24.7vw;
     grid-template-rows: 70vh 70vh 30vh 6vh;   
     font-family: 'Montserrat', sans-serif; 
 }
@@ -161,12 +182,12 @@ nav{
     margin: none; */
     text-align: center;
     box-sizing: border-box;
-    background-color: #B0CC99;
-    padding: 20px;
+    background-color: #60793b;  
+    padding: 8x;
     font-family: 'Montserrat', sans-serif;
     display: flex;
     justify-content: space-around;
-    align-items: baseline;
+    align-items: center;
 }
 
 nav a{
@@ -179,14 +200,9 @@ nav a{
 nav div{
     display: flex;
     justify-content: center;
-    align-items: center;;
-    position: relative;
-    position: top 2px;
-    margin-top: -17px;
-    margin-bottom: 17px;
-
-    margin-top: -20px;
-    margin-bottom:20px;
+    align-items: center;
+    margin-top: -5px;
+    margin-bottom: 10px;
 }
 
 nav img{
@@ -195,7 +211,7 @@ nav img{
 }
 
 nav h1{
-    color: #146b71;
+    color: whitesmoke;
 }
 
 .pag-index main{
@@ -208,7 +224,7 @@ nav h1{
 }
 
 .pag-index main h1{
-    color: white;
+    color: whitesmoke;
 }
 
 .pag-index section{
