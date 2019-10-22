@@ -22,3 +22,10 @@ function slideShow(){
 }
 
 window = slideShow()
+
+
+
+
+function mais(codigo){
+    alert(codigo)
+}

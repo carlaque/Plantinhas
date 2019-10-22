@@ -50,7 +50,7 @@
     <section class="exibicao">
 
         {% for planta in plantas %}
-        <div class="planta">
+        <div class="planta" >
             <img src="{% static 'imagens/vaso-amarela.png' %}" alt="">
             <label>
                 <p><strong>Nome:</strong> {{planta.nome}}
@@ -58,9 +58,13 @@
                 <p><strong>Lugar:</strong> {{planta.codEspaco.lugar}}
                     <strong>Temperatura:</strong> {{planta.codEspaco.codClima.nome}}</p>
             </label>
-            <button>Ver mais</button>
+            <button id="{{planta.codigo}}" onclick="mais(this.id)">Ver mais</button>
         </div>
         {% endfor %}
+
+        <div class="mais">
+
+        </div>
 
     </section>
 

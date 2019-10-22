@@ -177,6 +177,8 @@ nav a{
 nav div{
     display: flex;
     justify-content: center;
+    margin-top: -20px;
+    margin-bottom:20px;
 }
 
 nav img{
@@ -441,6 +443,12 @@ h1{
 
 .pag-plantas footer{
     grid-area: footer;
+}
+
+
+.mais{
+    display: none;
+
 }
 
 /* PAGINA DE CADASTRO JARDIM */
