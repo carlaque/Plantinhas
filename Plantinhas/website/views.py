@@ -95,27 +95,28 @@ def plantasCad(request, codigo):
 def plantas(request, codigo):
 
     if request.method == 'GET':
-        
-        nome = request.GET.get('nome')
-        espaco = request.GET.get('espaco')
-        intencao = request.GET.get('intencao')
-        temp = request.GET.get('temperatura')
 
-        plantas = {}
-        for p in Espaco.objects.filter(lugar = espaco, codClima = temp).all():
-            if nome != '' :
-                plantas = Planta.objects.filter(Q(nome=nome) & Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) | Q(codTipo=intencao)).distinct()
-            else:
-                plantas = Planta.objects.filter(Q(nome=nome) | Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) | Q(codTipo=intencao)).distinct()
+        if 'mostrar' in request.GET:
+            nome = request.GET.get('nome')
+            espaco = request.GET.get('espaco')
+            intencao = request.GET.get('intencao')
+            temp = request.GET.get('temperatura')
 
-        args = {
-            # 'dados' : dados,
-            'plantas' : plantas
-        }
-        return render(request, 'plantas.html', args)
+            plantas = {}
+            for p in Espaco.objects.filter(lugar = espaco, codClima = temp).all():
+                if nome != '' :
+                    plantas = Planta.objects.filter(Q(nome=nome) & Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) | Q(codTipo=intencao)).distinct()
+                else:
+                    plantas = Planta.objects.filter(Q(nome=nome) | Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) | Q(codTipo=intencao)).distinct()
+            
+            args = {
+                'plantas' : plantas
+            }
+            return render(request, 'plantas.html', args)
+
+
 
     args = {
-        # 'dados' : dados,
         'plantas' : Planta.objects.all()
     }
     return render(request, 'plantas.html', args)

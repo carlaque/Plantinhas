@@ -389,9 +389,9 @@ h1{
     justify-content: space-around;
 }
 
-.pag-plantas input:nth-child(1){
+/* .pag-plantas input:nth-child(1){
     margin: 3%  3% 0 ;
-}
+} */
 
 .pag-plantas form div{
     display: flex;
@@ -445,16 +445,23 @@ h1{
 .planta img{
     width: 65%;
 }
-.planta label{
+
+.planta input{
+    border: none;
+    height: 6vh;
+}
+
+.planta form div{
     display: flex;
     flex-direction: row;
-    font-size: 16pt;
-    margin: 0;
-    padding: 0;
+    padding-left: 5%;
 }
-.planta p:nth-last-child(1){
-    text-align: left;
+
+.planta input::placeholder{
+    border: none;
+    color: #D6E681;
 }
+
 .planta button{
     align-self: center;
     border: none;
@@ -469,11 +476,11 @@ h1{
     grid-area: footer;
 }
 
-
 .info{
     visibility: hidden;
     background-color: aliceblue;
 }
+
 
 /* PAGINA DE CADASTRO JARDIM */
 
