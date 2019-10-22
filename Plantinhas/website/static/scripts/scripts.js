@@ -30,6 +30,7 @@ function mais(codigo){
     abre.style.visibility = "visible"
     esconde.style.visibility = "hidden"
 
+    document.querySelector(".plantar"+ codigo ).style.visibility = "visible"
     document.querySelector(".menos"+ codigo ).style.visibility = "visible"
     document.querySelector(".mais"+ codigo ).style.visibility = "hidden"
     document.querySelector(".img"+codigo).style.visibility = "hidden"
@@ -45,6 +46,7 @@ function menos(codigo){
     esconde.style.visibility = "visible"
     abre.style.visibility = "hidden"
 
+    document.querySelector(".plantar"+ codigo ).style.visibility = "hidden"
     document.querySelector(".menos"+ codigo ).style.visibility = "hidden"
     document.querySelector(".mais"+ codigo ).style.visibility = "visible"
     document.querySelector(".img"+codigo).style.visibility = "visible"
