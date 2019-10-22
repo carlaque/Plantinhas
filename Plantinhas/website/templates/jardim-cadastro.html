@@ -5,6 +5,7 @@
 <h1>Sobre seu novo jardim:</h1>
 <div class="pag-cad-jardim">
     <form action="" method="post">
+        {% csrf_token %}
 
         <label for="">Nome:</label>
         <input type="text" name="nome" id="" placeholder="dê um nome pro seu jardim!">
@@ -29,10 +30,17 @@
             <option value="Suspensa">Suspensa</option>
         </select>
 
+        <label for="">A temperatura no lugar é:</label>
+        <select name="temperatura" id="busca">
+            <option value="6">Alta</option>
+            <option value="5">Amena</option>
+            <option value="4">Baixa</option>
+            <option value="3">Muito Baixa</option>
+        </select>
+
         <button type="submit">Agora ache uma plantinha!</button>
     </form>
 
 </div>
 
 {% endblock %}
-

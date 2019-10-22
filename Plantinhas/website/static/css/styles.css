@@ -453,7 +453,6 @@ h1{
 .pag-cad-jardim form{
     display: flex;
     flex-direction: column;
-    height:50vh;
     justify-content: space-between;
     width:20vw;
 }
@@ -472,17 +471,17 @@ h1{
     border-radius: 5px;
     height: 5vh;
     font-size: 14pt;
-    background-color: transparent;
-    
+    background-color: transparent; 
 }
 
 .pag-cad-jardim button{
     align-self: center;
     background-color: #0B380B;
-    color: #DCF4AB;
     border: none;
+    color: #DCF4AB;
     font-size: 12pt;
     height: 7vh;
+    margin-top:5%;
     width: 90%;
 }
 

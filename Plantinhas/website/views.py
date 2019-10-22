@@ -8,8 +8,6 @@ from django.db.models import Q
 def index(request):
     return render(request, 'index.html')
 
-
-
 def login(request):
 
     if request.method == "POST":
@@ -31,11 +29,9 @@ def login(request):
             logado = Usuario.objects.filter(username = user, senha = senha).first()
 
             if logado is not None:
-                #FAZER O REDIRECT PARA A PAGINA DO USUARIO
                 args = {
                     'dados' : logado.codigo
                 }
-                # return render(request, 'usuario.html', args)
                 aux = '/usuario/' + str(logado.codigo)
                 return redirect(aux, args)
             else:
@@ -105,9 +101,6 @@ def plantas(request, codigo):
         intencao = request.GET.get('intencao')
         temp = request.GET.get('temperatura')
 
-        
-        # for c in Espaco.objects.filter(codClima=Clima.objects.filter(nome=espaco).first()).distinct():
-        #     p = Planta.objects.filter(codEspaco = c).all()
         plantas = {}
         for p in Espaco.objects.filter(lugar = espaco, codClima = temp).all():
             if nome != '' :
@@ -127,14 +120,19 @@ def plantas(request, codigo):
     }
     return render(request, 'plantas.html', args)
 
-def jardimCad(request, codigo):
-    return render(request, 'jardim-cadastro.html')
 
 def usuario(request, codigo):
     dados = {}
-    if codigo != '':
+    if codigo > 0 :
         dados = Usuario.objects.filter(codigo = codigo).first()
     
+
+    if request.method == 'POST':
+        args = {
+            'dados' : dados
+        }
+        return redirect('/jardim/cadastro/' + str(dados.codigo), args)
+
     jardins = Jardim.objects.filter(codUsuario = 1).first()
 
     args = {
@@ -142,3 +140,39 @@ def usuario(request, codigo):
         'jardins' : jardins
     }
     return render(request, 'usuario.html', args)
+    
+
+
+def jardimCad(request, codigo):
+    dados = {}
+    if codigo > 0 :
+        dados = Usuario.objects.filter(codigo = codigo).first()
+    
+
+    if request.method == 'POST':
+        args = {}
+        j = Jardim()
+        j.nome = request.POST['nome']
+        if 'ensolarado' in request.POST:
+            j.ensolarado = True
+            args = {
+                'luz' : True ,
+                'espaco' : request.POST['lugar'] ,
+                'intencao' : request.POST['intencao'],
+                'temperatura' : request.POST['temperatura'] 
+            }
+        else:
+            args = {
+                'luz' : False ,
+                'espaco' : request.POST['lugar'] ,
+                'intencao' : request.POST['intencao'],
+                'temperatura' : request.POST['temperatura'] 
+            }
+
+        j.codUsuario = Usuario.objects.filter(codigo = codigo).first()
+        j.save()
+
+        return redirect('/plantas/' + str(dados.codigo) + '?nome=&espaco='+ request.POST['lugar'] + '&intencao=' +  request.POST['intencao'] +  '&temperatura=' +  request.POST['temperatura'])
+
+
+    return render(request, 'jardim-cadastro.html')
