@@ -1,21 +1,24 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <script defer src="{% static 'scripts/scripts.js' %}"></script>
+    <link rel="shortcut icon" href="../static/imagens/planta-icone.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <title>Plantinhas</title>
 </head>
 <body>
     <nav>
+        <div><h1>Plantinhas</h1> <img src="../static/imagens/planta-icone.png" alt="ícone de planta"></div>
         <a href="/">Início</a>
         <a href="">Plantas</a>
-        <a href="">Sobre nós</a>
-        <a href="/login">Login</a>
+        <a href="#section">Sobre o site</a>
+        <a href="/login">Login/Cadastro</a>
     </nav>
     <!-- <h2>hello {{dados.nome}}</h2> -->
 
@@ -27,3 +30,5 @@
 
 </body>
 </html>
+
+

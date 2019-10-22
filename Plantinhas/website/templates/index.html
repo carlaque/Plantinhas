@@ -4,20 +4,30 @@
 
 <div class="pag-index">
     <main>
-        <h1>SLIDE SHOW HERE</h1>
+        <div>
+        <h1>Encontre, plante e acompanhe.</h1>
         <!-- imagens -->
         <!-- javascript -->
         <!-- fundo #DCF4AB -->
+        </div>
     </main>
     <header>
-        <div>
-            <h3 class="ache_uma_planta">Ache uma plantinha ideal para você!</h3>
+        <h3>Para que posso usar o Plantinhas?</h3>
+        <div class="header_paragrafo"><h4>Plantinhas te ajuda a cuidar do seu jardim, seja sugerindo espécies que se adequem à sua realidade, seja criando um ambiente virtual que te ajuda a acompanhar a evolução das suas plantas!</h4></div>
+        <div class="header_opcoes">
+            <div class="ache_uma_planta">
+                <a href="plantas/1"><strong> Achar a planta ideal <br>pra você!</strong> </a>
+            </div>
+            <div class = "header_espaço"><div class = "header_linha">></div></div>
+            <div class="monte_seu_jardim">
+                <a href="jardim/cadastro/1"><strong> Montar seu jardim!</strong> </a>
+            </div>
         </div>
-        <form  method="post">
+        <!-- <form  method="post">
             {% csrf_token %}
             <div class="pesquisar_plantinha">
                 <div class="pesquisar_regiao">
-                    <!-- <h3>Qual a região onde pretende plantar ?</h3>
+                    <h3>Qual a região onde pretende plantar ?</h3>
                     <select name="clima">
                         <option value="clima">Norte</option>
                         <option value="clima">Nordeste</option>
@@ -25,7 +35,7 @@
                         <option value="clima">Suldeste</option>
                         <option value="clima">Sul</option>
                     </select> -->
-                </div>
+        <!-- </div>
                 
                 <div class="pesquisar_espaco">
                     
@@ -37,9 +47,9 @@
             </div>
         <div class="pesquisar-img">
             <img src="{% static 'imagens/grass-310691_960_720.png' %}" alt="grass">
-        </div>
+        </div> -->
     </header>
-    <section>
+    <section id = "section">
         <div class="sobrenos">
             <h2>Sobre nós</h2>
         </div>
