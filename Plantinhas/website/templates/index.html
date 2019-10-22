@@ -2,6 +2,10 @@
 {% load staticfiles %}
 {% block content %}
 
+<div>
+
+
+</div>
 <div class="pag-index">
     <main>
         <div>
@@ -9,7 +13,7 @@
             <!-- imagens -->
             <!-- javascript -->
             <!-- fundo #DCF4AB -->
-        </div>
+        </div>  
     </main>
     <header>
         <h3>Para que posso usar o Plantinhas?</h3>
@@ -18,17 +22,19 @@
                 criando um ambiente virtual que te ajuda a acompanhar a evolução das suas plantas!</h4>
         </div>
         <div class="header_opcoes">
-            <div class="ache_uma_planta">
+            <div class="ache_uma_planta" onclick = "clicar_planta()">
+                <img src="../static/imagens/icone-header.png" alt="mão com planta">
                 <a href="plantas/0"><strong> Achar a planta ideal <br>pra você!</strong> </a>
             </div>
-            <div class="header_espaço">
-                <!-- <div class = "header_linha"></div> -->
-            </div>
-            <div class="monte_seu_jardim">
+            <!-- <div class="header_espaço">
+                <div class = "header_linha"></div> 
+            </div> -->
+            <div class="monte_seu_jardim" onclick = "clicar_jardim()">
+                <img src="../static/imagens/icone-header-2.png" alt="plantas no jardim">
                 <a href="jardim/cadastro/1"><strong> Montar seu jardim!</strong> </a>
             </div>
         </div>
-        <div class="header_lanha"></div>
+        <!-- <div class="header_lanha"></div> -->
         <!-- <form  method="post">
             {% csrf_token %}
             <div class="pesquisar_plantinha">
@@ -59,9 +65,9 @@
         <div>
             <h3>Mas por que plantar?</h3>
         </div>
-        <p id="sono"></p>
+        <h4 id="sono"></h4>
     </section>
-    <footer>
+    <!-- <footer>
         <a href=""><strong>Contact</strong></a>
         <a href=""><strong>Download</strong>
         </a>
@@ -70,18 +76,7 @@
         <a href=""><strong>E-mail</strong></a>
         <a href=""><strong>Support</strong></a>
         <a href=""><strong>Privacy Policy</strong></a>
-        <!-- colocar ícones de rede social, rever -->
-    </footer>
-
-
-
-
-
-
-
-
-
-
+    </footer> -->
 
 </div>
 
