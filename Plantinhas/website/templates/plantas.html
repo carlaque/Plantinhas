@@ -69,15 +69,15 @@
                 </label>
             </div>
 
-            <div class="info{{planta.codigo}}" id="info" >
+            <div class="info{{planta.codigo}}" id="info">
                 <strong> Nome: <input type="text" name="nome" disabled="disabled"
-                    placeholder="{{planta.nome}}"></strong>
+                        placeholder="{{planta.nome}}"></strong>
 
                 <strong> Quantas vezes regar por semana: </strong><input type="text" name="nome" disabled="disabled"
                     placeholder="{{planta.diasRegar}}">
 
                 <strong> Pode sob sol direto?: <input type="checkbox" name="nome" disabled="disabled"
-                    placeholder="{{planta.luz}}"></strong>
+                        placeholder="{{planta.luz}}"></strong>
 
                 <strong> Quando pode ser colhida: </strong><input type="text" name="nome" disabled="disabled"
                     placeholder="{{planta.colher}}">
@@ -89,7 +89,7 @@
                     placeholder=" {{planta.codEspaco.lugar}}">
 
                 <strong> Ela é venenosa?: <input type="checkbox" name="nome" disabled="disabled"
-                    placeholder="{{planta.venenosa}}" style="margin:0;" ></strong>
+                        placeholder="{{planta.venenosa}}" style="margin:0;"></strong>
 
 
                 <strong> Intenção: </strong><input type="text" name="intencao" disabled="disabled"
@@ -98,7 +98,15 @@
                 <strong> Observações: </strong><input type="text" name="intencao" disabled="disabled"
                     placeholder="{{planta.observacoes}}">
 
-                <button class="plantar" id="plantar{{planta.codigo}}">Plantar</button>
+                <form method="post">
+                    {% csrf_token %}
+                    <select name="jardim" id="">
+                        {% for jardim in jardins %}
+                        <option value="{{jardim.codigo}}">{{jardim.nome}}</option>
+                        {% endfor %}
+                    </select>
+                    <button class="plantar" id="plantar{{planta.codigo}}">Plantar</button>
+                </form>
             </div>
 
             <button id="{{planta.codigo}}" onclick="mais(this.id)" class="mais{{planta.codigo}}">Ver mais</button>
