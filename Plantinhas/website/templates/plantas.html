@@ -51,33 +51,65 @@
 
         {% for planta in plantas %}
         <div class="planta">
-            <img src="{% static 'imagens/vaso-amarela.png' %}" alt="">
+            <img src="{% static 'imagens/vaso-amarela.png' %}" alt="" class="img{{planta.codigo}}">
 
-            <form method="get">
+            <div class="principal{{planta.codigo}}" id="principal">
 
-                <div>
+                <label for="">
+                    <strong> Nome: </strong><input type="text" name="nome" disabled="disabled"
+                        placeholder="{{planta.nome}}">
+                    <strong> Intenção: </strong><input type="text" name="intencao" disabled="disabled"
+                        placeholder="{{planta.codTipo}}">
+                </label>
+                <label for="">
+                    <strong> Lugar: </strong> <input type="text" name="lugar" disabled="disabled"
+                        placeholder=" {{planta.codEspaco.lugar}}">
+                    <strong> Temperatura: </strong> <input type="text" name="temperatura" disabled="disabled"
+                        placeholder="{{planta.codEspaco.codClima.nome}}">
+                </label>
+            </div>
 
-                    <label for="">
-                        <strong> Nome: </strong><input type="text" name="nome" disabled="disabled"
-                            placeholder="{{planta.nome}}">
-                        <strong> Intenção: </strong><input type="text" name="intencao" disabled="disabled"
-                            placeholder="{{planta.codTipo}}">
-                    </label>
-                    <label for="">
-                        <strong> Lugar: </strong> <input type="text" name="lugar" disabled="disabled"
-                            placeholder=" {{planta.codEspaco.lugar}}">
-                        <strong> Temperatura: </strong> <input type="text" name="temperatura" disabled="disabled"
-                            placeholder="{{planta.codEspaco.codClima.nome}}">
-                    </label>
-                </div>
+            <div class="info{{planta.codigo}}" id="info" >
+                <strong> Nome: <input type="text" name="nome" disabled="disabled"
+                    placeholder="{{planta.nome}}"></strong>
 
-                <button onclick="mais(this.id)" name="mais">Ver mais</button>
+                <strong> Quantas vezes regar por semana: </strong><input type="text" name="nome" disabled="disabled"
+                    placeholder="{{planta.diasRegar}}">
 
-                <div class="info">
-                    
-                </div>
-            </form>
+                <strong> Pode sob sol direto?: <input type="checkbox" name="nome" disabled="disabled"
+                    placeholder="{{planta.luz}}"></strong>
+
+                <strong> Quando pode ser colhida: </strong><input type="text" name="nome" disabled="disabled"
+                    placeholder="{{planta.colher}}">
+
+                <strong> Sobre a poda: </strong><input type="text" name="nome" disabled="disabled"
+                    placeholder="{{planta.podar}}">
+
+                <strong> Lugar: </strong> <input type="text" name="lugar" disabled="disabled"
+                    placeholder=" {{planta.codEspaco.lugar}}">
+
+                <strong> Ela é venenosa?: <input type="checkbox" name="nome" disabled="disabled"
+                    placeholder="{{planta.venenosa}}" style="margin:0;" ></strong>
+
+
+                <strong> Intenção: </strong><input type="text" name="intencao" disabled="disabled"
+                    placeholder="{{planta.codTipo}}">
+
+                <strong> Observações: </strong><input type="text" name="intencao" disabled="disabled"
+                    placeholder="{{planta.observcoes}}">
+
+
+            </div>
+
+            <button id="{{planta.codigo}}" onclick="mais(this.id)" class="mais{{planta.codigo}}">Ver mais</button>
+
+
+            <button id="{{planta.codigo}}" onclick="menos(this.id)" class="menos{{planta.codigo}}">Ver menos</button>
+
+
         </div>
+
+
         {% endfor %}
 
 

@@ -389,9 +389,6 @@ h1{
     justify-content: space-around;
 }
 
-/* .pag-plantas input:nth-child(1){
-    margin: 3%  3% 0 ;
-} */
 
 .pag-plantas form div{
     display: flex;
@@ -434,9 +431,8 @@ h1{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-end;
     margin-bottom: 3%;
-    padding:2% 0 2%;
+    padding:2% 0 0%;
     width: 27vw;
 }
 .planta p{
@@ -451,11 +447,13 @@ h1{
     height: 6vh;
 }
 
-.planta form div{
+.planta #principal{
     display: flex;
     flex-direction: row;
+    height: 50vh;
     padding-left: 5%;
 }
+
 
 .planta input::placeholder{
     border: none;
@@ -463,22 +461,29 @@ h1{
 }
 
 .planta button{
-    align-self: center;
+    align-items: center;
     border: none;
-    font-size: 12pt;
+    font-size: 14pt;
     height: 5vh;
     background-color: #0B380B;
     color: #DCF4AB;
-    width: 60%;
+    width: 70%;
+    margin: 0 3% 0;
 }
 
 .pag-plantas footer{
     grid-area: footer;
 }
 
-.info{
+.planta #info{
+    display: flex;
+    flex-direction: column;
+    height: -20vh;
+    margin-top:-150%;
     visibility: hidden;
-    background-color: aliceblue;
+}
+.planta button:nth-last-child(1){
+    visibility: hidden;
 }
 
 

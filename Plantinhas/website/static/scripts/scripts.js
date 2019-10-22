@@ -25,6 +25,28 @@ window = slideShow()
 
 
 function mais(codigo){
-    var x = document.querySelector(".info")
-    x.style.visibility = "visible"
+    var abre = document.querySelector(".info"+codigo)
+    var esconde = document.querySelector(".principal"+codigo)
+    abre.style.visibility = "visible"
+    esconde.style.visibility = "hidden"
+
+    document.querySelector(".menos"+ codigo ).style.visibility = "visible"
+    document.querySelector(".mais"+ codigo ).style.visibility = "hidden"
+    document.querySelector(".img"+codigo).style.visibility = "hidden"
+
+
+    x.style.width = "100%"
+    x.style.visibility = "visible"  
+}
+
+function menos(codigo){
+    var abre = document.querySelector(".info"+codigo)
+    var esconde = document.querySelector(".principal"+codigo)
+    esconde.style.visibility = "visible"
+    abre.style.visibility = "hidden"
+
+    document.querySelector(".menos"+ codigo ).style.visibility = "hidden"
+    document.querySelector(".mais"+ codigo ).style.visibility = "visible"
+    document.querySelector(".img"+codigo).style.visibility = "visible"
+
 }
