@@ -40,8 +40,8 @@
                         <option value="3">Muito Baixa</option>
                     </select>
                 </label>
-                
-                <button type="submit"></button>
+
+                <button type="submit" name="mostrar"></button>
 
             </div>
         </form>
@@ -50,21 +50,37 @@
     <section class="exibicao">
 
         {% for planta in plantas %}
-        <div class="planta" >
+        <div class="planta">
             <img src="{% static 'imagens/vaso-amarela.png' %}" alt="">
-            <label>
-                <p><strong>Nome:</strong> {{planta.nome}}
-                    <strong>Intenção:</strong> {{planta.codTipo}}</p>
-                <p><strong>Lugar:</strong> {{planta.codEspaco.lugar}}
-                    <strong>Temperatura:</strong> {{planta.codEspaco.codClima.nome}}</p>
-            </label>
-            <button id="{{planta.codigo}}" onclick=" mais(this.id) " >Ver mais</button>
+
+            <form method="get">
+
+                <div>
+
+                    <label for="">
+                        <strong> Nome: </strong><input type="text" name="nome" disabled="disabled"
+                            placeholder="{{planta.nome}}">
+                        <strong> Intenção: </strong><input type="text" name="intencao" disabled="disabled"
+                            placeholder="{{planta.codTipo}}">
+                    </label>
+                    <label for="">
+                        <strong> Lugar: </strong> <input type="text" name="lugar" disabled="disabled"
+                            placeholder=" {{planta.codEspaco.lugar}}">
+                        <strong> Temperatura: </strong> <input type="text" name="temperatura" disabled="disabled"
+                            placeholder="{{planta.codEspaco.codClima.nome}}">
+                    </label>
+                </div>
+
+                <button onclick="mais(this.id)" name="mais">Ver mais</button>
+
+                <div class="info">
+                    
+                </div>
+            </form>
         </div>
         {% endfor %}
 
-        <div class="info">
-            {{planta.objects.filter(codigo = {{}})}}
-        </div>
+
 
     </section>
 
