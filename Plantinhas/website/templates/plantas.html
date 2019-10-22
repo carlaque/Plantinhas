@@ -58,12 +58,12 @@
                 <p><strong>Lugar:</strong> {{planta.codEspaco.lugar}}
                     <strong>Temperatura:</strong> {{planta.codEspaco.codClima.nome}}</p>
             </label>
-            <button id="{{planta.codigo}}" onclick="mais(this.id)">Ver mais</button>
+            <button id="{{planta.codigo}}" onclick=" mais(this.id) " >Ver mais</button>
         </div>
         {% endfor %}
 
-        <div class="mais">
-
+        <div class="info">
+            {{planta.objects.filter(codigo = {{}})}}
         </div>
 
     </section>

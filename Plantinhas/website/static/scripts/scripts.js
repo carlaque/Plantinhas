@@ -24,8 +24,8 @@ function slideShow(){
 window = slideShow()
 
 
-
-
 function mais(codigo){
-    alert(codigo)
+    // alert(codigo + 'fdsfsdsd')
+    var x = document.querySelector(".info")
+    x.style.visibility = "visible"
 }
