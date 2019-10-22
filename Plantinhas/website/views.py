@@ -110,9 +110,21 @@ def plantas(request, codigo):
                     plantas = Planta.objects.filter(Q(nome=nome) | Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) | Q(codTipo=intencao)).distinct()
             
             args = {
-                'plantas' : plantas
+                'plantas' : plantas,
+                'jardins' : Jardim.objects.filter(codUsuario = Usuario.objects.filter(codigo = codigo).first()).all()
             }
             return render(request, 'plantas.html', args)
+    
+    if request.method == 'POST':
+        plantada = Plantada()
+        plantada.codJardim = Jardim.objects.filter(codigo = request.POST['jardim']).first().codigo
+        plantada.codUsuario = Usuario.objects.filter(codigo = codigo).first().codigo
+        plantada.save()
+
+        args = {
+                'jardins' : Jardim.objects.filter(codUsuario = Usuario.objects.filter(codigo = codigo).first()).all()
+            }
+        return render(request, 'plantas.html', args)
 
 
 

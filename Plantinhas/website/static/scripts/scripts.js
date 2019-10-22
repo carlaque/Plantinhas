@@ -24,8 +24,8 @@ function slideShow(){
 
 window = slideShow()
 
-
 function mais(codigo){
+<<<<<<< HEAD
     var x = document.querySelector(".info")
     x.style.visibility = "visible"
 }
@@ -37,4 +37,29 @@ function clicar_planta(){
 
 function clicar_jardim(){
     window.location = "jardim/cadastro/1"
+=======
+    var abre = document.querySelector(".info"+codigo)
+    var esconde = document.querySelector(".principal"+codigo)
+    abre.style.visibility = "visible"
+    esconde.style.visibility = "hidden"
+
+    document.querySelector("#plantar"+ codigo ).style.visibility = "visible"
+    document.querySelector(".menos"+ codigo ).style.visibility = "visible"
+    document.querySelector(".mais"+ codigo ).style.visibility = "hidden"
+    document.querySelector(".img"+codigo).style.visibility = "hidden"
+
+}
+
+function menos(codigo){
+    var abre = document.querySelector(".info"+codigo)
+    var esconde = document.querySelector(".principal"+codigo)
+    esconde.style.visibility = "visible"
+    abre.style.visibility = "hidden"
+
+    document.querySelector("#plantar"+ codigo ).style.visibility = "hidden"
+    document.querySelector(".menos"+ codigo ).style.visibility = "hidden"
+    document.querySelector(".mais"+ codigo ).style.visibility = "visible"
+    document.querySelector(".img"+codigo).style.visibility = "visible"
+
+>>>>>>> 9e9604304032c56db52c61ccef2e0177ff763f04
 }
