@@ -185,6 +185,8 @@ nav div{
     margin-top: -17px;
     margin-bottom: 17px;
 
+    margin-top: -20px;
+    margin-bottom:20px;
 }
 
 nav img{
@@ -449,6 +451,12 @@ h1{
 
 .pag-plantas footer{
     grid-area: footer;
+}
+
+
+.info{
+    visibility: hidden;
+    background-color: aliceblue;
 }
 
 /* PAGINA DE CADASTRO JARDIM */
