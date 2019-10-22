@@ -1,5 +1,5 @@
-body{
-    background-color: #DCF4AB;
+    body{
+    background-color:#B7CA79;
     color: #0B380B;
     margin: 0;
 }
@@ -149,34 +149,42 @@ margin: 1,1,1,1;
                          'section section section section'
                          'footer footer footer footer';
     grid-template-columns: 25vw 25vw 25vw 25vw;
-    grid-template-rows: 70vh 70vh 30vh 10vh;   
+    grid-template-rows: 70vh 70vh 30vh 6vh;   
     font-family: 'Montserrat', sans-serif; 
 }
 
 
 nav{
     /* display: flex;
-    justify-content: space-around;
     align-items: center;
     background-color: #3E8914;
     margin: none; */
     text-align: center;
     box-sizing: border-box;
-    background: rgb(0, 0, 0);
+    background-color: #B0CC99;
     padding: 20px;
     font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
 }
 
 nav a{
     text-decoration: none;
     font-size: 14pt;
-    color:#e3c4c6;
+    color: white;
     margin-right: 20px;
 }
 
 nav div{
     display: flex;
     justify-content: center;
+    align-items: center;;
+    position: relative;
+    position: top 2px;
+    margin-top: -17px;
+    margin-bottom: 17px;
+
 }
 
 nav img{
@@ -190,7 +198,7 @@ nav h1{
 
 .pag-index main{
     grid-area: main;
-    background-image: url("../imagens/paisagem-tulipa.jpg");
+    background-image: url("../imagens/background-plantinha.jpg");
 }
 
 .pag-index main div{
@@ -198,7 +206,7 @@ nav h1{
 }
 
 .pag-index main h1{
-    color: #125c61;
+    color: white;
 }
 
 .pag-index section{
