@@ -1,6 +1,6 @@
 let i = 0;
 let lista = [];
-let time = 2000;
+let time = 3000;
 let section = document.getElementById('sono');
 let div = document.getElementsByClassName('ache_uma_planta')
 
@@ -25,7 +25,6 @@ function slideShow(){
 window = slideShow()
 
 function mais(codigo){
-<<<<<<< HEAD
     var x = document.querySelector(".info")
     x.style.visibility = "visible"
 }
@@ -37,7 +36,6 @@ function clicar_planta(){
 
 function clicar_jardim(){
     window.location = "jardim/cadastro/1"
-=======
     var abre = document.querySelector(".info"+codigo)
     var esconde = document.querySelector(".principal"+codigo)
     abre.style.visibility = "visible"
@@ -61,5 +59,4 @@ function menos(codigo){
     document.querySelector(".mais"+ codigo ).style.visibility = "visible"
     document.querySelector(".img"+codigo).style.visibility = "visible"
 
->>>>>>> 9e9604304032c56db52c61ccef2e0177ff763f04
 }
