@@ -30,7 +30,8 @@ def login(request):
 
             if logado is not None:
                 args = {
-                    'dados' : logado.codigo
+                    'dados' : logado.codigo,
+                    'jardins' : Jardim.objects.filter(codUsuario = logado.codigo).first()
                 }
                 aux = '/usuario/' + str(logado.codigo)
                 return redirect(aux, args)
@@ -138,20 +139,17 @@ def usuario(request, codigo):
     if codigo > 0 :
         dados = Usuario.objects.filter(codigo = codigo).first()
     
-    if request.method == 'POST':
+        if request.method == 'POST':
+            args = {
+                'dados' : dados
+            }
+            return redirect('/jardim/cadastro/' + str(dados.codigo), args)
+
         args = {
+            'jardins' : Jardim.objects.filter(codUsuario = codigo).all(),
             'dados' : dados
         }
-        return redirect('/jardim/cadastro/' + str(dados.codigo), args)
-
-    jardins = Jardim.objects.filter(codUsuario = codigo).first()
-
-    args = {
-        'dados' : dados,
-        'jardins' : jardins
-        
-    }
-    return render(request, 'usuario.html', args)
+        return render(request, 'usuario.html', args)
     
 
 
