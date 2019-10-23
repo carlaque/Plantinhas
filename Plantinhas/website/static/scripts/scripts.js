@@ -1,15 +1,40 @@
 let i = 0;
 let lista = [];
+let listaimg = [];
 let time = 3000;
 let section = document.getElementById('sono');
 // let div = document.getElementsByClassName('ache_uma_planta')
 
-lista[0] = "ter acesso a uma alimentação sem agrotóxicos";
-lista[1] = "atividade terapêutica para aliviar o stress do dia a dia";
-lista[2] = "criar um ambiente bonito e agradável dentro de casa";
+lista[0] = "aumentar o contato com a natureza";
+lista[1] = "criar um ambiente bonito e agradável dentro de casa";
+lista[2] = "atividade terapêutica para aliviar o stress do dia a dia";
 lista[3] = "desenvolver hábitos alimentares mais saudáveis";
-lista[4] = "aumentar o contato com a natureza";
+lista[4] = "ter acesso a uma alimentação sem agrotóxicos";
 lista[5] = "diminuir a dependência da indústria alimentícia";
+
+let imagem = document.getElementById("trocarImagem")
+
+function tomara(){
+        if (imagem.src.match("icone-frase1")){
+            imagem.src="../static/imagens/cherry-blossom.png"
+        }
+        else if (imagem.src.match("cherry-blossom")){
+            imagem.src="../static/imagens/woman.png"
+        }
+        else if (imagem.src.match("woman")){
+            imagem.src="../static/imagens/vegetables.png"
+        }
+        else if (imagem.src.match("vegetables")){
+            imagem.src="../static/imagens/poison.png"
+        }
+        else if (imagem.src.match("poison")){
+            imagem.src="../static/imagens/industria.png"
+        }
+        else if (imagem.src.match("industria")){
+            imagem.src="../static/imagens/icone-frase1.png"
+        }
+        setTimeout('tomara()', time)
+}
 
 function slideShow(){
     section.innerHTML = lista[i];
@@ -23,6 +48,8 @@ function slideShow(){
 }
 
 window = slideShow()
+setTimeout('tomara()', time)
+
 
 function mais(codigo){
     var x = document.querySelector(".info")
