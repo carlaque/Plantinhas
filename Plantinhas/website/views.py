@@ -151,6 +151,7 @@ def usuario(request, codigo):
     args = {
         'dados' : dados,
         'jardins' : jardins
+        
     }
     return render(request, 'usuario.html', args)
     

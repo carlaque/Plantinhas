@@ -1,7 +1,9 @@
-    body{
+body{
     background-color: #F6E8B1;
     color: #0B380B;
     margin: 0;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif; 
 }
 
 .entrar, .cadastrar{
@@ -30,6 +32,7 @@
     padding: 25px;
     width: 20vw;
 }
+
 
 .pag-login header{
     display: flex;
@@ -70,6 +73,11 @@
     align-items: center;
 }
 
+.pag-index header h3{
+    color: #1a380b;
+    font-size: 30px;
+}
+
 /* h4{
     align-self: center;
 } */
@@ -89,50 +97,69 @@
 .pag-index .header_lanha{
     height: 3px;
     width: 700px;
-    background-color: #146b71;
+    background-color: #677E52;
 }
 
 .pag-index .header_opcoes{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     height: 100%;
     width: 100%;
 }
 
+.ache_uma_planta:hover{
+    background: #677E52;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
 .ache_uma_planta{
-    height: 220px;
-    width: 220px;
+    height: 270px;
+    width: 270px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     font-size: 20pt; 
     border-radius: 50%;
-    background-color: #e3c4c6;
+    background-color: #89725B;
+    cursor: pointer;
+    
 }
 
 .ache_uma_planta a{
     text-decoration: none;
-    color: #146b71;
+    color: whitesmoke;
     font-size: 20px;
+    text-align: center;
+    font-stretch: narrower;
+}
+
+.monte_seu_jardim:hover{
+    background-color: #677E52;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 .monte_seu_jardim{
-    height: 220px;
-    width: 220px;
+    height: 270px;
+    width: 270px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     font-size: 20pt;
     border-radius: 50%;
-    background-color: #e3c4c6;   
+    background-color: #89725B;   
+    cursor: pointer;
 }
 
 .monte_seu_jardim a{
     text-decoration: none;
-    color: #146b71;
+    color: whitesmoke;
     font-size: 20px;
 }
 
@@ -140,12 +167,14 @@
     margin: 0px;
     opacity: 1;
 }
+
 .pag-login{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
 }
+
 .pag-login img{
     margin-left: -40vw;
     margin-top: 50vh;
@@ -167,12 +196,12 @@ margin: 1,1,1,1;
     display: grid;
     grid-template-areas: 'main main main main'
                          'header header header header'
-                         'section section section section'
-                         'footer footer footer footer';
-    grid-template-columns: 24.7vw 24.7vw 24.7vw 24.7vw;
-    grid-template-rows: 70vh 70vh 30vh 6vh;   
+                         'section section section section';                
+    grid-template-columns: 24.7vw 24.7vw 24.7vw;
+    grid-template-rows: 70vh 90vh 30vh;   
     font-family: 'Montserrat', sans-serif; 
 }
+
 
 
 nav{
@@ -217,6 +246,8 @@ nav h1{
 .pag-index main{
     grid-area: main;
     background-image: url("../imagens/background-plantinha.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .pag-index main div{
@@ -225,34 +256,47 @@ nav h1{
 
 .pag-index main h1{
     color: whitesmoke;
+    -webkit-animation: fadeIn 5s ease-in-out;
+    -moz-animation: fadeIn 5s ease-in-out;
+    -o-animation: fadeIn 5s ease-in-out;
+    animation: fadeIn 5s ease-in-out; 
+    -webkit-animation-fill-mode:forwards;
+    -moz-animation-fill-mode:forwards;
+    -o-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;  
 }
 
 .pag-index section{
     grid-area: section;
-    background-color: black;
+    background-color: rgba(209, 177, 134, 0.671);
     text-align: center;
 }
 
 .pag-index section h3{    
-    color:  #146b71;
+    color: #1a380b;
     font-size: 30px;
 }
 
-.pag-index section p{
-    color: #e3c4c6;
+.pag-index section h4{
+    color: #677E52;
     font-size: 20px;
+    opacity: 1;
+    transition-delay: 1;
 }
 
-.pag-index footer{
-    background-color: #e3c4c6;
+footer{
+    background-color: #6B5328;
+    height: 6vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.pag-index footer a{
+footer a{
+    color: whitesmoke;
     text-decoration: none;
-    color: #125c61;
 }
+
 
 /* .pag-index main{
     grid-area: main;
@@ -291,7 +335,7 @@ nav h1{
     max-height: 82px;
 }
 
-.pag-index  footer{
+.pag-index footer{
     grid-area: footer;
 }
 
@@ -388,7 +432,6 @@ h1{
     flex-direction: column;
     justify-content: space-around;
 }
-
 
 .pag-plantas form div{
     display: flex;
@@ -545,4 +588,15 @@ h1{
 }
 .add-jardim{
     
+}
+
+.pag-usuario button{
+    align-items: center;
+    border: none;
+    font-size: 14pt;
+    height: 10vh;
+    background-color: #0B380B;
+    color: #DCF4AB;
+    width: 80%;
+    margin: 0 3% 0;
 }
