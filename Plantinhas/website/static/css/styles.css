@@ -659,7 +659,20 @@ h1{
     flex-wrap: wrap;
 }
 
-.pag-plantadas .plantada{
+.pag-plantadas form{
     background-color: #677E52;
-    margin: 2%;
+    margin: 1%;
+    padding: 1%;
 }
+
+.pag-plantadas .plantada p {
+    color: #DCF4AB;
+} 
+.pag-plantadas .plantada button{
+    border: none;
+    font-size: 12pt;
+    background-color: #0B380B;
+    color: #DCF4AB;
+    margin: 0 3% 0;
+    margin-left: 3vw;
+} 

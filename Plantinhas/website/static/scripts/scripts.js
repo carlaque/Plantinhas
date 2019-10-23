@@ -52,29 +52,10 @@ window = slideShow()
 setTimeout('tomara()', time)
 
 
-function mais(codigo){
-    var x = document.querySelector(".info")
-    x.style.visibility = "visible"
-}
-
-
 function clicar_planta(){
-    window.location = "plantas/0?nome=&espaco=Vaso&intencao=1&temperatura=6&mostrar="
+    window.location = "plantas/0"
 }
 
-// function clicar_jardim(){
-//     window.location = "jardim/cadastro/1"
-//     var abre = document.querySelector(".info"+codigo)
-//     var esconde = document.querySelector(".principal"+codigo)
-//     abre.style.visibility = "visible"
-//     esconde.style.visibility = "hidden"
-
-//     document.querySelector("#plantar"+ codigo ).style.visibility = "visible"
-//     document.querySelector(".menos"+ codigo ).style.visibility = "visible"
-//     document.querySelector(".mais"+ codigo ).style.visibility = "hidden"
-//     document.querySelector(".img"+codigo).style.visibility = "hidden"
-
-// }
 
 
 function mais(codigo){
