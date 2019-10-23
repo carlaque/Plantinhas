@@ -161,6 +161,8 @@ body{
     text-decoration: none;
     color: whitesmoke;
     font-size: 20px;
+    text-align: center;
+    font-stretch: narrower;
 }
 
 .pag-index h4{
@@ -201,7 +203,6 @@ margin: 1,1,1,1;
     grid-template-rows: 70vh 90vh 30vh;   
     font-family: 'Montserrat', sans-serif; 
 }
-
 
 
 nav{
@@ -264,6 +265,7 @@ nav h1{
     -moz-animation-fill-mode:forwards;
     -o-animation-fill-mode:forwards;
     animation-fill-mode:forwards;  
+    font-size: 50px;
 }
 
 .pag-index section{
