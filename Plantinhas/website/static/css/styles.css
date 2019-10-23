@@ -1,3 +1,6 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+}
 body{
     background-color: #F6E8B1;
     color: #0B380B;
@@ -517,15 +520,18 @@ h1{
 }
 
 .planta #info h2{
+    font-family: 'Montserrat', sans-serif;
     margin:0;
 }
 .planta #info strong{
+    font-family: 'Montserrat', sans-serif;
     border: none;
     height: 7vh;
     padding:3px;
 }
 
 .planta input::placeholder{
+    font-family: 'Montserrat', sans-serif;
     border: none;
     color: ghostwhite;
     font-size:14pt;
@@ -574,6 +580,7 @@ h1{
     height: 5vh;
     font-size: 14pt;
     background-color: transparent;
+    font-family: 'Montserrat', sans-serif;
     
 }
 
