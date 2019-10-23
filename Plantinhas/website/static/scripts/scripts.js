@@ -74,3 +74,5 @@ function menos(codigo){
     document.querySelector(".img"+codigo).style.visibility = "visible"
 
 }
+
+let fadeIn = document.querySelector(".fadeIn");

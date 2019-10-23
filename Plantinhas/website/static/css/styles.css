@@ -422,7 +422,7 @@ h1{
                          'section section section section'
                          'footer footer footer footer';
     grid-template-columns: 25vw 25vw 25vw;
-    grid-template-rows: 35vh % 10vh;  
+    grid-template-rows: 35vh 10vh;  
 }
 .pag-plantas main{
     grid-area: main;    
@@ -607,3 +607,12 @@ h1{
     width: 80%;
     margin: 0 3% 0;
 }
+
+.fadeIn {
+    animation-duration: 1s, ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+    }
