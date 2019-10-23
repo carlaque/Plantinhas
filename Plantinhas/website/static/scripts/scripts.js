@@ -57,6 +57,10 @@ function clicar_planta(){
     window.location = "plantas/0"
 }
 
+function cadastre() {
+    window.location = "login"
+}
+
 
 
 function mais(codigo){

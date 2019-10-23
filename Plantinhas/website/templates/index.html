@@ -1,6 +1,27 @@
-{% extends "base.html" %}
-{% load staticfiles %}
-{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script defer src="{% static 'scripts/scripts.js' %}"></script>
+    <link rel="shortcut icon" href="../static/imagens/icon-forest.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Plantinhas</title>
+</head>
+<body>
+    <nav>
+        <div><h1>Plantinhas</h1><img src="{% static 'imagens/forest-for-icon.png' %}"alt="ícone de planta"></div>
+        <a href="/">Início</a>
+        <a href="/plantas/0">Ache uma plantinha</a>
+        <a href="#section">Por que plantar?</a>
+        <a href="/login">Login/Cadastro</a>
+    </nav>
+
+<section> 
 
 <div>
 </div>
@@ -27,9 +48,9 @@
             <!-- <div class="header_espaço">
                 <div class = "header_linha"></div> 
             </div> -->
-            <div class="monte_seu_jardim" onclick="clicar_jardim()">
+            <div class="monte_seu_jardim" onclick="cadastre()" >
                 <img src="../static/imagens/icone-header-2.png" alt="plantas no jardim">
-                <a href="/login"><strong> Entre para montar seu jardim!</strong> </a>
+                <a href="login/"><strong> Entre para montar seu jardim!</strong> </a>
             </div>
         </div>
     </header>
@@ -47,4 +68,15 @@
 
 </div>
 
-{% endblock %}
+</section>
+    
+<footer>
+        <a href=""><strong>Contact</strong></a>
+        <a href=""><strong>Download</strong>
+        </a>
+        <a href=""><strong>E-mail</strong></a>
+        <a href=""><strong>Support</strong></a>
+        <a href=""><strong>Privacy Policy</strong></a>
+    </footer>
+</body>
+</html>

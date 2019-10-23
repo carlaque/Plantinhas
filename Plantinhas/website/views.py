@@ -51,6 +51,7 @@ def login(request):
 
             if logado is not None:
                 args = {
+                    'usuario' : True,
                     'dados' : logado.codigo,
                     'jardins' : Jardim.objects.filter(codUsuario = logado.codigo).first()
                 }
@@ -135,12 +136,14 @@ def plantas(request, codigo):
             if codigo > 0:
                 args = {
                     'usuario' : True,
+                    'dados' : Usuario.objects.filter(codigo = codigo).first(),
                     'plantas' : plantas,
                     'jardins' : Jardim.objects.filter(codUsuario = Usuario.objects.filter(codigo = codigo).first()).all()
                 }
             else:
                 args = {
                     'usuario' : False,
+                    'dados' : Usuario.objects.filter(codigo = codigo).first(),
                     'plantas' : plantas,
                     'jardins' : Jardim.objects.filter(codUsuario = Usuario.objects.filter(codigo = codigo).first()).all()
                 }
@@ -158,6 +161,7 @@ def plantas(request, codigo):
 
             args = {
                 'usuario' : True,
+                'dados' : Usuario.objects.filter(codigo = codigo).first(),
                 'plantas' : Planta.objects.all(),
                 'jardins' : Jardim.objects.filter(codUsuario = Usuario.objects.filter(codigo = codigo).first()).all()
             }
@@ -171,12 +175,12 @@ def plantas(request, codigo):
     else: 
         args = {
             'plantas' : Planta.objects.all(),
+            'dados' : Usuario.objects.filter(codigo = codigo).first(),
             'jardins' : Jardim.objects.filter(codUsuario = Usuario.objects.filter(codigo = codigo).first()).all(),
             'usuario' : True
         }     
     
     return render(request, 'plantas.html', args )
-
 
 def usuario(request, codigo):
     dados = {}
@@ -197,6 +201,7 @@ def usuario(request, codigo):
                 return redirect('/jardim/cadastro/' + str(dados.codigo), args)
 
         args = {
+            'usuario' : True,
             'jardins' : Jardim.objects.filter(codUsuario = codigo).all(),
             'dados' : dados
         }
@@ -244,22 +249,28 @@ def jardimCad(request, codigo):
 def plantadas(request, codigo, jardim):
     dados = {}
     if codigo > 0:
+        dados = Usuario.objects.filter(codigo = codigo).first()
 
         if request.method == 'POST':
-            p = Plantada()
-            p = Plantada.objects.filter(codPlanta = request.POST['deletar'], codJardim = jardim ).first()
-            p.delete()
+            if 'deletar' in request.POST:
+                p = Plantada()
+                p = Plantada.objects.filter(codPlanta = request.POST['deletar'], codJardim = jardim ).first()
+                p.delete()
 
-            args = {
-                'msg' : 'A planta ' + str(Planta.objects.filter(codigo = request.POST['deletar']).first()) + ' foi retirada desse jardim',
-                'jardim' : Jardim.objects.filter(codigo = jardim).first(),
-                'plantadas' : Plantada.objects.filter(codJardim = jardim).all()
-            }
+                args = {
+                    'dados' : Usuario.objects.filter(codigo = codigo).first(),
+                    'msg' : 'A planta ' + str(Planta.objects.filter(codigo = request.POST['deletar']).first()) + ' foi retirada desse jardim',
+                    'jardim' : Jardim.objects.filter(codigo = jardim).first(),
+                    'plantadas' : Plantada.objects.filter(codJardim = jardim).all()
+                }
 
-            return render(request, 'jardim-plantas.html', args)
+                return render(request, 'jardim-plantas.html', args)
+            else:
+                return redirect('/plantas/' + str(codigo))
 
-        dados = Usuario.objects.filter(codigo = codigo).first()
+        
         args = {
+            'dados' : Usuario.objects.filter(codigo = codigo).first(),
             'jardim' : Jardim.objects.filter(codigo = jardim).first(),
             'plantadas' : Plantada.objects.filter(codJardim = jardim).all()
         }

@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block content %}
+<nav>
+    <div>
+        <h1>Plantinhas</h1><img src="{% static 'imagens/forest-for-icon.png' %}" alt="ícone de planta">
+    </div>
+    <a href="/">Início</a>
+    <a href="/plantas/0"></a>
+    <a href="#section">Por que plantar?</a>
+    <a href="/login">Login/Cadastro</a>
+</nav>
 
 <h1>Insira os dados da nova plantinha:</h1>
 <form action="" method="post">
@@ -19,7 +28,7 @@
             <input type="checkbox" name="luz" id="">
 
             <label for=""> Venenosa? </label>
-            <input type="checkbox" name="venenosa" id="">            
+            <input type="checkbox" name="venenosa" id="">
 
             <label for="">Sobre a colheita: </label>
             <input type="text" name="colher" id="">

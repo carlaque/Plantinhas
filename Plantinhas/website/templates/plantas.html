@@ -2,6 +2,27 @@
 {% load staticfiles %}
 {% block content %}
 
+{% if usuario == False %}
+<nav>
+    <div>
+        <h1>Plantinhas</h1><img src="{% static 'imagens/forest-for-icon.png' %}" alt="ícone de planta">
+    </div>
+    <a href="/">Início</a>
+    <a href="/plantas/0">Ache uma plantinha</a>
+    <a href="/login">Login/Cadastro</a>
+</nav>
+{% else %}
+<nav>
+    <div>
+        <h1>Plantinhas</h1><img src="{% static 'imagens/forest-for-icon.png' %}" alt="ícone de planta">
+    </div>
+    <a href="/">Início</a>
+    <a href="/plantas/{{dados.codigo}}">Ache uma plantinha</a>
+    <a href="/usuario/{{dados.codigo}}">Meus Jardins</a>
+    <a> Olá, {{dados.nome}}</a>
+</nav>
+{% endif %}
+
 <h1>Ache uma plantinha!</h1>
 <div class="pag-plantas">
 
@@ -84,10 +105,12 @@
                     {% endif %}
 
                     {% if planta.venenosa == True %}
-                    Ela é venenosa?: <input type="checkbox" name="venenosa" disabled="disabled" style="height:2vh;" checked></strong>
-                    {%else%}
-                    Ela é venenosa?: <input type="checkbox" name="venenosa" disabled="disabled" style="height:2vh;" ></strong>
-                    {%endif%}
+                    Ela é venenosa?: <input type="checkbox" name="venenosa" disabled="disabled" style="height:2vh;"
+                        checked></strong>
+                {%else%}
+                Ela é venenosa?: <input type="checkbox" name="venenosa" disabled="disabled"
+                    style="height:2vh;"></strong>
+                {%endif%}
 
                 <strong> Quando pode ser colhida: </strong><input type="text" name="colher" disabled="disabled"
                     placeholder="{{planta.colher}}">

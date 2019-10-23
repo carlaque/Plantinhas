@@ -1,7 +1,15 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block content %}
-
+<nav>
+    <div>
+        <h1>Plantinhas</h1><img src="{% static 'imagens/forest-for-icon.png' %}" alt="ícone de planta">
+    </div>
+    <a href="/">Início</a>
+    <a href="/plantas/{{dados.codigo}}">Ache uma plantinha</a>
+    <a href="/usuario/{{dados.codigo}}">Meus Jardins</a>
+    <a> Ola, {{dados.nome}}</a>
+</nav>
 <h1>{{jardim.nome}}</h1>
 
 {{msg}}
@@ -45,9 +53,17 @@
             <button type="submit" value="{{planta.codPlanta.codigo}}" name="deletar">Retirar desse jardim</button>
 
         </div>
-
     </form>
     {% endfor %}
+
+    <div class="achar">
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">
+                Achar um plantinha para esse jardim;
+            </button>
+        </form>
+    </div>
 </div>
 
 {% endblock %}

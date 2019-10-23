@@ -2,6 +2,15 @@
 {% load staticfiles %}
 {% block content %}
 
+<nav>
+    <div>
+        <h1>Plantinhas</h1><img src="{% static 'imagens/forest-for-icon.png' %}" alt="ícone de planta">
+    </div>
+    <a href="/">Início</a>
+    <a href="/plantas/0">Ache uma plantinha</a>
+    <a href="/login">Login/Cadastro</a>
+</nav>
+
 {% if not msg%}
 <h1>Sobre seu novo jardim:</h1>
 <div class="pag-cad-jardim">
@@ -42,7 +51,7 @@
 
 </div>
 {% else %}
-    {{ msg }}
+{{ msg }}
 {% endif %}
 
 {% endblock %}
