@@ -4,14 +4,49 @@
 
 <h1>{{jardim.nome}}</h1>
 
+{{msg}}
 <div class="pag-plantadas">
 
     {% for planta in plantadas %}
-    <div class="plantada">
-        <p>{{planta.codPlanta.nome}}</p>
-        
-    </div>
+    <form method="post">
+        {% csrf_token %}
+        <div class="plantada">
+            <p>Nome: {{planta.codPlanta.nome}}</p>
 
+            <p>
+                Quantas vezes regar por semana: {{planta.diasRegar}}
+            </p>
+
+            <p>
+                Pode sob sol direto?: {{planta.luz}}"
+            </p>
+            <p>
+                Ela é venenosa?: {{planta.venenosa}}
+            </p>
+
+            <p>
+                Quando pode ser colhida: {{planta.colher}}
+            </p>
+            <p>
+                Sobre a poda: {{planta.podar}}
+            </p>
+            <p>
+                Lugar: {{planta.codEspaco.lugar}}
+            </p>
+
+            <p>
+                Intenção: {{planta.codTipo}}
+            </p>
+
+            <p>
+                Observações:{{planta.observacoes}}
+            </p>
+
+            <button type="submit" value="{{planta.codPlanta.codigo}}" name="deletar">Retirar desse jardim</button>
+
+        </div>
+
+    </form>
     {% endfor %}
 </div>
 

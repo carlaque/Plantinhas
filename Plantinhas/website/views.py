@@ -226,6 +226,20 @@ def jardimCad(request, codigo):
 def plantadas(request, codigo, jardim):
     dados = {}
     if codigo > 0:
+
+        if request.method == 'POST':
+            p = Plantada()
+            p = Plantada.objects.filter(codPlanta = request.POST['deletar'], codJardim = jardim ).first()
+            p.delete()
+
+            args = {
+                'msg' : 'A planta ' + str(Planta.objects.filter(codigo = request.POST['deletar']).first()) + ' foi retirada desse jardim',
+                'jardim' : Jardim.objects.filter(codigo = jardim).first(),
+                'plantadas' : Plantada.objects.filter(codJardim = jardim).all()
+            }
+
+            return render(request, 'jardim-plantas.html', args)
+
         dados = Usuario.objects.filter(codigo = codigo).first()
         args = {
             'jardim' : Jardim.objects.filter(codigo = jardim).first(),
