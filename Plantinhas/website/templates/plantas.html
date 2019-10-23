@@ -71,16 +71,23 @@
             </div>
 
             <div class="info{{planta.codigo}}" id="info">
-                <strong> Nome: <input type="text" name="nome" disabled="disabled"
-                        placeholder="{{planta.nome}}"></strong>
+                <h2> <input type="text" name="nome" disabled="disabled" placeholder="{{planta.nome}}"></h2>
 
                 <strong> Quantas vezes regar por semana: </strong><input type="text" name="diasRega" disabled="disabled"
                     placeholder="{{planta.diasRegar}}">
 
-                <strong> Pode sob sol direto?: <input type="checkbox" name="luz" disabled="disabled"
-                        placeholder="{{planta.luz}}" style="height:2vh">
-                    Ela é venenosa?: <input type="checkbox" name="venenosa" disabled="disabled"
-                        placeholder="{{planta.venenosa}}" style="height:2vh;"></strong>
+                <strong> Pode sob sol direto?:
+                    {% if planta.luz == True %}
+                    <input type="checkbox" name="luz" disabled="disabled" style="height:2vh" checked>
+                    {% else%}
+                    <input type="checkbox" name="luz" disabled="disabled" style="height:2vh">
+                    {% endif %}
+
+                    {% if planta.venenosa == True %}
+                    Ela é venenosa?: <input type="checkbox" name="venenosa" disabled="disabled" style="height:2vh;" checked></strong>
+                    {%else%}
+                    Ela é venenosa?: <input type="checkbox" name="venenosa" disabled="disabled" style="height:2vh;" ></strong>
+                    {%endif%}
 
                 <strong> Quando pode ser colhida: </strong><input type="text" name="colher" disabled="disabled"
                     placeholder="{{planta.colher}}">
@@ -100,14 +107,23 @@
 
                 <form method="post">
                     {% csrf_token %}
+
+                    {% if usuario %}
+
                     <select name="jardim">
                         {% for jardim in jardins %}
-                        <option value="{{jardim.codigo}}">{{jardim.codigo}} {{jardim.nome}}</option>
+                        <option value="{{jardim.codigo}}"> {{jardim.nome}}</option>
                         {% endfor %}
                     </select>
 
+
                     <button class="plantar" id="plantar{{planta.codigo}}" name="codigo"
                         value="{{planta.codigo}}">Plantar {{planta.nome}}</button>
+                    {% else %}
+
+                    <h2>Se cadastre ou entre para ter um jardim.</p>
+
+                        {% endif %}
                 </form>
             </div>
 

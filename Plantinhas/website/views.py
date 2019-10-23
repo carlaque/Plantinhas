@@ -117,7 +117,7 @@ def plantasCad(request, codigo):
     return render(request, 'plantas-cadastro.html', args)
 
 def plantas(request, codigo):
-
+    
     if request.method == 'GET':
 
         if 'mostrar' in request.GET:
@@ -132,31 +132,49 @@ def plantas(request, codigo):
                     plantas = Planta.objects.filter(Q(nome=nome) & Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) | Q(codTipo=intencao)).distinct()
                 else:
                     plantas = Planta.objects.filter(Q(nome=nome) | Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) | Q(codTipo=intencao)).distinct()
-            
+            if codigo > 0:
+                args = {
+                    'usuario' : True,
+                    'plantas' : plantas,
+                    'jardins' : Jardim.objects.filter(codUsuario = Usuario.objects.filter(codigo = codigo).first()).all()
+                }
+            else:
+                args = {
+                    'usuario' : False,
+                    'plantas' : plantas,
+                    'jardins' : Jardim.objects.filter(codUsuario = Usuario.objects.filter(codigo = codigo).first()).all()
+                }
+
+            return render(request, 'plantas.html', args)
+    
+    if codigo > 0:
+        if request.method == 'POST':
+            plantada = Plantada()
+            plant = Planta.objects.filter(codigo=request.POST['codigo']).first()
+            jard =Jardim.objects.filter(codUsuario=codigo,codigo=request.POST['jardim']).first()
+            plantada.codJardim = jard
+            plantada.codPlanta = plant
+            plantada.save()
+
             args = {
-                'plantas' : plantas,
+                'usuario' : True,
+                'plantas' : Planta.objects.all(),
                 'jardins' : Jardim.objects.filter(codUsuario = Usuario.objects.filter(codigo = codigo).first()).all()
             }
             return render(request, 'plantas.html', args)
-    
-    if request.method == 'POST':
-        plantada = Plantada()
-        plant = Planta.objects.filter(codigo=request.POST['codigo']).first()
-        jard =Jardim.objects.filter(codUsuario=codigo,codigo=request.POST['jardim']).first()
-        plantada.codJardim = jard
-        plantada.codPlanta = plant
-        plantada.save()
 
+    if codigo == 0:
         args = {
             'plantas' : Planta.objects.all(),
-            'jardins' : Jardim.objects.filter(codUsuario = Usuario.objects.filter(codigo = codigo).first()).all()
+            'usuario' : False
         }
-        return render(request, 'plantas.html', args)
+    else: 
+        args = {
+            'plantas' : Planta.objects.all(),
+            'jardins' : Jardim.objects.filter(codUsuario = Usuario.objects.filter(codigo = codigo).first()).all(),
+            'usuario' : True
+        }     
     
-    args = {
-        'plantas' : Planta.objects.all(),
-    }
-
     return render(request, 'plantas.html', args )
 
 

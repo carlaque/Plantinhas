@@ -52,11 +52,6 @@ window = slideShow()
 setTimeout('tomara()', time)
 
 
-function mais(codigo){
-    var x = document.querySelector(".info")
-    x.style.visibility = "visible"
-}
-
 
 function clicar_planta(){
     window.location = "plantas/0"
@@ -70,9 +65,11 @@ function mais(codigo){
     esconde.style.visibility = "hidden"
     abre.style.visibility = "visible"
 
-    document.querySelector("#plantar"+ codigo ).style.visibility = "visible"
+    if (document.querySelector("#plantar"+ codigo )){
+        document.querySelector("#plantar"+ codigo ).style.visibility = "visible"
+    }
     document.querySelector(".menos"+ codigo ).style.visibility = "visible"
-    document.querySelector(".mais"+ codigo ).style.visibility = "hidden"
+    document.querySelector(".pag-plantas .mais"+ codigo ).style.visibility = "hidden"
     document.querySelector(".img"+codigo).style.visibility = "hidden"
 
 }
@@ -83,7 +80,9 @@ function menos(codigo){
     esconde.style.visibility = "visible"
     abre.style.visibility = "hidden"
 
-    document.querySelector("#plantar"+ codigo ).style.visibility = "hidden"
+    if (document.querySelector("#plantar"+ codigo )){
+        document.querySelector("#plantar"+ codigo ).style.visibility = "hidden"
+    }
     document.querySelector(".menos"+ codigo ).style.visibility = "hidden"
     document.querySelector(".mais"+ codigo ).style.visibility = "visible"
     document.querySelector(".img"+codigo).style.visibility = "visible"
