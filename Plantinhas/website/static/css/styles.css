@@ -422,7 +422,7 @@ h1{
                          'section section section section'
                          'footer footer footer footer';
     grid-template-columns: 25vw 25vw 25vw;
-    grid-template-rows: 35vh 60vh 10vh;  
+    grid-template-rows: 35vh % 10vh;  
 }
 .pag-plantas main{
     grid-area: main;    
@@ -470,6 +470,7 @@ h1{
 .planta{
     background-color:#3E8914;
     border: 5px solid #C2A878;
+    
     color: #D6E681;
     display: flex;
     flex-wrap: wrap;
@@ -493,8 +494,20 @@ h1{
 .planta #principal{
     display: flex;
     flex-direction: row;
-    height: 50vh;
     padding-left: 5%;
+}
+
+.planta #info{
+    display: flex;
+    flex-direction: column;
+    height: -20vh;
+    margin-top:-100%;
+    visibility: hidden;
+    flex-wrap: wrap;
+}
+.planta #info div{
+    display: flex;
+    flex-direction: row;
 }
 
 
@@ -518,13 +531,7 @@ h1{
     grid-area: footer;
 }
 
-.planta #info{
-    display: flex;
-    flex-direction: column;
-    height: -20vh;
-    margin-top:-150%;
-    visibility: hidden;
-}
+
 .planta button:nth-last-child(1){
     visibility: hidden;
 }

@@ -48,6 +48,20 @@ function clicar_jardim(){
 
 }
 
+
+function mais(codigo){
+    var abre = document.querySelector(".info"+codigo)
+    var esconde = document.querySelector(".principal"+codigo)
+    esconde.style.visibility = "hidden"
+    abre.style.visibility = "visible"
+
+    document.querySelector("#plantar"+ codigo ).style.visibility = "visible"
+    document.querySelector(".menos"+ codigo ).style.visibility = "visible"
+    document.querySelector(".mais"+ codigo ).style.visibility = "hidden"
+    document.querySelector(".img"+codigo).style.visibility = "hidden"
+
+}
+
 function menos(codigo){
     var abre = document.querySelector(".info"+codigo)
     var esconde = document.querySelector(".principal"+codigo)
