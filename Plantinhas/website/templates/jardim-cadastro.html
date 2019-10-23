@@ -2,6 +2,7 @@
 {% load staticfiles %}
 {% block content %}
 
+{% if not msg%}
 <h1>Sobre seu novo jardim:</h1>
 <div class="pag-cad-jardim">
     <form action="" method="post">
@@ -17,10 +18,9 @@
 
         <label for="">Intenção:</label>
         <select name="intencao" id="">
-            <option value="1">Decoração</option>
-            <option value="2">Tempero</option>
-            <option value="3">Chá</option>
-            <option value="4">PANC</option>
+            {% for i in intencao %}
+            <option value="{{i.codigo}}">{{i.tipo   }}</option>
+            {% endfor %}
         </select>
 
         <label for="">O lugar das plantas:</label>
@@ -32,15 +32,17 @@
 
         <label for="">A temperatura no lugar é:</label>
         <select name="temperatura" id="busca">
-            <option value="6">Alta</option>
-            <option value="5">Amena</option>
-            <option value="4">Baixa</option>
-            <option value="3">Muito Baixa</option>
+            {% for t in temperatura %}
+            <option value="{{t.codigo}}">{{t.nome}}</option>
+            {% endfor %}
         </select>
 
         <button type="submit">Agora ache uma plantinha!</button>
     </form>
 
 </div>
+{% else %}
+    {{ msg }}
+{% endif %}
 
 {% endblock %}

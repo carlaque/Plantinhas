@@ -31,7 +31,7 @@ function mais(codigo){
 
 
 function clicar_planta(){
-    window.location = "plantas/0"
+    window.location = "plantas/0?nome=&espaco=Vaso&intencao=1&temperatura=6&mostrar="
 }
 
 function clicar_jardim(){

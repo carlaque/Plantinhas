@@ -6,6 +6,7 @@ body{
     font-family: 'Montserrat', sans-serif; 
 }
 
+
 .entrar, .cadastrar{
     border:5px solid #3E8914;
     display: flex;
@@ -32,7 +33,6 @@ body{
     padding: 25px;
     width: 20vw;
 }
-
 
 .pag-login header{
     display: flex;
@@ -588,24 +588,55 @@ h1{
 .pag-usuario{
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     flex-direction: row;
+    margin-top: 2%;
 }
 .jardim{
-
+    display: flex;
+    flex-direction: column; 
+    margin-bottom:3% ;
+    padding: 2%;
+    background-color: #3E8914;
+    width: 25vw;
 }
 .add-jardim{
+    align-items:center;
+    border: none;
+    justify-content: center;
+    display: flex;
+    background-color: #F6E8B1;
+    margin-bottom:3% ;
+    padding: 2%;
+    width:25vw;
+}
+
+.add-jardim button{
+    border: none;
+    font-size: 14pt;
+    background-color: #6B5328;
+    height:10vh;
+    color: #DCF4AB;
     
+    width: 100%;
 }
 
 .pag-usuario button{
     align-items: center;
     border: none;
     font-size: 14pt;
-    height: 10vh;
     background-color: #0B380B;
     color: #DCF4AB;
-    width: 80%;
     margin: 0 3% 0;
+}
+
+.pag-usuario input{
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    font-size: 16pt;
+    padding: 2.5px;
+    color:#DCF4AB;
 }
 
 .fadeIn {

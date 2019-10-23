@@ -7,7 +7,16 @@
 
 
     {% for jardim in jardins %}
-        <a href="">{{jardim.nome}}</a>
+    <div class="jardim">
+
+        <input type="text" name="nome" id="" disabled="disabled" value="{{jardim.nome}}">
+
+        <label for="">
+            Recebe muita luz do sol:  <input type="checkbox" name="luz" id="" value="{{jardim.ensolarado}}"
+            disabled="disabled"></label>
+
+        <button type="submit">Plantas</button>
+    </div>
     {% endfor %}
 
     <div class="add-jardim">
