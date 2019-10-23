@@ -24,5 +24,6 @@ urlpatterns = [
     path('plantas/cadastrar/<int:codigo>', views.plantasCad),
     path('plantas/<int:codigo>', views.plantas),
     path('jardim/cadastro/<int:codigo>', views.jardimCad),
-    path('usuario/<int:codigo>', views.usuario)
+    path('usuario/<int:codigo>', views.usuario),
+    path('jardim/plantas/<int:codigo>/<int:jardim>', views.plantadas)
 ]

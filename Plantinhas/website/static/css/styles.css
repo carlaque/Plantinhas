@@ -647,3 +647,17 @@ h1{
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
+
+/* PAGINA PLANTADA */
+
+.pag-plantadas{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.pag-plantadas .plantada{
+    background-color: #677E52;
+    margin: 2%;
+}

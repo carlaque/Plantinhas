@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<h1>{{jardim.nome}}</h1>
+
+<div class="pag-plantadas">
+
+    {% for planta in plantadas %}
+    <div class="plantada">
+        <p>{{planta.codPlanta.nome}}</p>
+        
+    </div>
+
+    {% endfor %}
+</div>
+
+{% endblock %}
