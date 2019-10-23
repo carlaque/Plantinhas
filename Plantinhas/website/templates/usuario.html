@@ -7,20 +7,23 @@
 
 
     {% for jardim in jardins %}
+    <form method="post">
     <div class="jardim">
 
-        <input type="text" name="nome" id="" disabled="disabled" value="{{jardim.nome}}">
+            {% csrf_token %}
+            <input type="text" name="nome" id="" disabled="disabled" value="{{jardim.nome}}">
 
-        <label for="">
-            Recebe muita luz do sol:  <input type="checkbox" name="luz" id="" value="{{jardim.ensolarado}}"
-            disabled="disabled"></label>
+            <label for="">
+                Recebe muita luz do sol: <input type="checkbox" name="luz" id="" value="{{jardim.ensolarado}}"
+                    disabled="disabled"></label>
 
-        <button type="submit">Plantas</button>
-    </div>
+            <button type="submit" name="plantada" value="{{jardim.codigo}}">Plantas</button>
+        </div>
+    </form>
     {% endfor %}
 
     <div class="add-jardim">
-        <form method="post">
+        <form method="POST">
             {% csrf_token %}
             <button type="submit">
                 Criar um novo jardim
