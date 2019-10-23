@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<nav>
+    <div>
+        <h1>Plantinhas</h1><img src="{% static 'imagens/forest-for-icon.png' %}" alt="ícone de planta">
+    </div>
+    <a href="/">Início</a>
+    <a href="/plantas/0">Ache uma plantinha</a>
+    <a href="/login">Login/Cadastro</a>
+</nav>
+
+{% if not msg%}
+<h1>Sobre seu novo jardim:</h1>
+<div class="pag-cad-jardim">
+    <form action="" method="post">
+        {% csrf_token %}
+
+        <label for="">Nome:</label>
+        <input type="text" name="nome" id="" placeholder="dê um nome pro seu jardim!">
+
+        <label for="" width:100%>
+            <input type="checkbox" name="ensolarado" id="">Tem sol nesse jardim!
+        </label>
+
+
+        <label for="">Intenção:</label>
+        <select name="intencao" id="">
+            {% for i in intencao %}
+            <option value="{{i.codigo}}">{{i.tipo}}</option>
+            {% endfor %}
+        </select>
+
+        <label for="">O lugar das plantas:</label>
+        <select name="lugar" id="">
+            <option value="Vaso">Vaso</option>
+            <option value="Chão">Chão</option>
+            <option value="Suspensa">Suspensa</option>
+        </select>
+
+        <label for="">A temperatura no lugar é:</label>
+        <select name="temperatura" id="busca">
+            {% for t in temperatura %}
+            <option value="{{t.codigo}}">{{t.nome}}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Agora ache uma plantinha!</button>
+    </form>
+
+</div>
+{% else %}
+{{ msg }}
+{% endif %}
+
+{% endblock %}

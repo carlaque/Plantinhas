@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+<nav>
+    <div>
+        <h1>Plantinhas</h1><img src="{% static 'imagens/forest-for-icon.png' %}" alt="ícone de planta">
+    </div>
+    <a href="/">Início</a>
+    <a href="/plantas/0"></a>
+    <a href="#section">Por que plantar?</a>
+    <a href="/login">Login/Cadastro</a>
+</nav>
+
+<h1>Insira os dados da nova plantinha:</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="pag-planta-cad">
+
+        <div class="plant-main">
+
+            <label for="">Nome:</label>
+            <input type="text" name="nome" id="">
+
+            <label for="">Quantas vezes por semana deve ser regada?</label>
+            <input type="text" name="diasRegar" id="">
+
+            <label for="">Pode ficar exposta ao sol direto?</label>
+            <input type="checkbox" name="luz" id="">
+
+            <label for=""> Venenosa? </label>
+            <input type="checkbox" name="venenosa" id="">
+
+            <label for="">Sobre a colheita: </label>
+            <input type="text" name="colher" id="">
+
+            <label for="">Sobre a poda: </label>
+            <input type="text" name="podar" id="">
+
+
+            <label for="">Pra que serve a plantinha? </label>
+            <select name="tipo" id="">
+                {% for item in listar_tipo %}
+                <option value="{{item.codigo}}">{{item.tipo}}</option>
+                {% endfor %}
+            </select>
+
+            <label for="">Observações:</label>
+            <textarea name="obs" id="" cols="30" rows="7"></textarea>
+
+
+            <label for="">Em que lugar se recomenda ficar: </label>
+            <select name="lugar" id="">
+                <option value="vaso">Vaso</option>
+                <option value="chao">Chão</option>
+                <option value="suspensa">Suspensa</option>
+            </select>
+
+            <label for="">O tamanho do espaço que precisa (em centímetros): </label>
+            <input type="text" name="tamanho" id="">
+
+            <label for="">Sobre o solo:</label>
+            <input type="text" name="solo" id="">
+
+            <label for="">Sobre a temperatura:</label>
+            <select name="Local" id="">
+                {% for item in listar_local %}
+                <option value="{{item.codigo}}">{{item.nome}}</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit">Cadastrar</button>
+
+            <img src="{% static 'imagens/3-no-vaso.png' %}" alt="">
+
+        </div>
+
+    </div>
+</form>
+
+{% endblock %}
