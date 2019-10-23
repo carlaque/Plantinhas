@@ -18,13 +18,13 @@ def index(request):
         c.save()
     if not Intencao.objects.all():
         i = Intencao()
-        i.nome = 'Decoração'
+        i.tipo = 'Decoração'
         i.save()
-        i.nome = 'Tempero'
+        i.tipo = 'Tempero'
         i.save()
-        i.nome = 'Chá'
+        i.tipo = 'Chá'
         i.save()
-        i.nome = 'PANC'
+        i.tipo = 'PANC'
         i.save()
     
     return render(request, 'index.html')

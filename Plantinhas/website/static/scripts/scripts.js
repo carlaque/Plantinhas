@@ -51,6 +51,12 @@ window = slideShow()
 setTimeout('tomara()', time)
 
 
+function mais(codigo){
+    var x = document.querySelector(".info")
+    x.style.visibility = "visible"
+}
+
+
 function clicar_planta(){
     window.location = "plantas/0"
 }
