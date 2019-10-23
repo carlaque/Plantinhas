@@ -2,7 +2,7 @@ let i = 0;
 let lista = [];
 let time = 3000;
 let section = document.getElementById('sono');
-let div = document.getElementsByClassName('ache_uma_planta')
+// let div = document.getElementsByClassName('ache_uma_planta')
 
 lista[0] = "ter acesso a uma alimentação sem agrotóxicos";
 lista[1] = "atividade terapêutica para aliviar o stress do dia a dia";

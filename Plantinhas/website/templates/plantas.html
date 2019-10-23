@@ -7,12 +7,14 @@
 
     <main>
         <form action="" method="get">
-
             <h3>Encontre sua plantinha:</h3>
+           <h4>Procure pelo nome de uma espécie para encontrar suas informações ou deixe em branco para conferir todas as plantas cadastradas.</h4>
+            
 
             <input type="text" name="nome" id="busca" placeholder="Busque por um nome">
 
             <h3>Ou encontramos uma pra você!</h3>
+            <h4>Complete o formulário para que possamos sugerir a planta ideal para seu ambiente.</h4>
 
             <div>
                 <label for="">Onde você quer plantar?
@@ -114,23 +116,9 @@
 
             <button id="{{planta.codigo}}" onclick="menos(this.id)" class="menos{{planta.codigo}}">Ver menos</button>
 
-
         </div>
-
-
         {% endfor %}
-
-
-
     </section>
-
-    <footer color="white">
-        {{luz}}
-        {{intencao}}
-        {{espaco}}
-        {{temperatura}}
-    </footer>
-
 </div>
 
 {% endblock %}

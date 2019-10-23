@@ -198,10 +198,13 @@ margin: 1,1,1,1;
                          'header header header header'
                          'section section section section';                
     grid-template-columns: 24.7vw 24.7vw 24.7vw;
-    grid-template-rows: 70vh 70vh 30vh;   
+    grid-template-rows: 70vh 90vh 30vh;   
     font-family: 'Montserrat', sans-serif; 
 }
 
+#sono{
+    display: none;
+}
 
 nav{
     /* display: flex;
@@ -432,7 +435,6 @@ h1{
     justify-content: space-around;
 }
 
-
 .pag-plantas form div{
     display: flex;
     flex-direction: row;
@@ -588,4 +590,15 @@ h1{
 }
 .add-jardim{
     
+}
+
+.pag-usuario button{
+    align-items: center;
+    border: none;
+    font-size: 14pt;
+    height: 10vh;
+    background-color: #0B380B;
+    color: #DCF4AB;
+    width: 80%;
+    margin: 0 3% 0;
 }
