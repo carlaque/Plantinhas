@@ -117,15 +117,16 @@ def plantas(request, codigo):
     
     if request.method == 'POST':
         plantada = Plantada()
-        plantada.codJardim = Jardim.objects.filter(codigo = request.POST['jardim']).first().codigo
-        plantada.codUsuario = Usuario.objects.filter(codigo = codigo).first().codigo
+        plant = Planta.objects.filter(codigo=request.POST['codigo']).first()
+        plantada.codJardim = Jardim.objects.filter(codUsuario=codigo,codigo=request.POST['jardim']).first()
+        plantada.codPlanta = plant
         plantada.save()
 
         args = {
-                'jardins' : Jardim.objects.filter(codUsuario = Usuario.objects.filter(codigo = codigo).first()).all()
-            }
+            'plantas' : Planta.objects.all(),
+            'jardins' : Jardim.objects.filter(codUsuario = Usuario.objects.filter(codigo = codigo).first()).all()
+        }
         return render(request, 'plantas.html', args)
-
 
 
     args = {
@@ -139,14 +140,13 @@ def usuario(request, codigo):
     if codigo > 0 :
         dados = Usuario.objects.filter(codigo = codigo).first()
     
-
     if request.method == 'POST':
         args = {
             'dados' : dados
         }
         return redirect('/jardim/cadastro/' + str(dados.codigo), args)
 
-    jardins = Jardim.objects.filter(codUsuario = 1).first()
+    jardins = Jardim.objects.filter(codUsuario = codigo).first()
 
     args = {
         'dados' : dados,

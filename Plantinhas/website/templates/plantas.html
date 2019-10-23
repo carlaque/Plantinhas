@@ -73,44 +73,44 @@
                 <strong> Nome: <input type="text" name="nome" disabled="disabled"
                         placeholder="{{planta.nome}}"></strong>
 
-                <strong> Quantas vezes regar por semana: </strong><input type="text" name="nome" disabled="disabled"
+                <strong> Quantas vezes regar por semana: </strong><input type="text" name="diasRega" disabled="disabled"
                     placeholder="{{planta.diasRegar}}">
 
-                <strong> Pode sob sol direto?: <input type="checkbox" name="nome" disabled="disabled"
+                <strong> Pode sob sol direto?: <input type="checkbox" name="luz" disabled="disabled"
                         placeholder="{{planta.luz}}"></strong>
 
-                <strong> Quando pode ser colhida: </strong><input type="text" name="nome" disabled="disabled"
+                <strong> Quando pode ser colhida: </strong><input type="text" name="colher" disabled="disabled"
                     placeholder="{{planta.colher}}">
 
-                <strong> Sobre a poda: </strong><input type="text" name="nome" disabled="disabled"
+                <strong> Sobre a poda: </strong><input type="text" name="poda" disabled="disabled"
                     placeholder="{{planta.podar}}">
 
                 <strong> Lugar: </strong> <input type="text" name="lugar" disabled="disabled"
                     placeholder=" {{planta.codEspaco.lugar}}">
 
-                <strong> Ela é venenosa?: <input type="checkbox" name="nome" disabled="disabled"
+                <strong> Ela é venenosa?: <input type="checkbox" name="venenosa" disabled="disabled"
                         placeholder="{{planta.venenosa}}" style="margin:0;"></strong>
 
 
                 <strong> Intenção: </strong><input type="text" name="intencao" disabled="disabled"
                     placeholder="{{planta.codTipo}}">
 
-                <strong> Observações: </strong><input type="text" name="intencao" disabled="disabled"
+                <strong> Observações: </strong><input type="text" name="observacoes" disabled="disabled"
                     placeholder="{{planta.observacoes}}">
 
                 <form method="post">
                     {% csrf_token %}
-                    <select name="jardim" id="">
+                    <select name="jardim">
                         {% for jardim in jardins %}
-                        <option value="{{jardim.codigo}}">{{jardim.nome}}</option>
+                            <option value="{{jardim.codigo}}">{{jardim.codigo}} {{jardim.nome}}</option>
                         {% endfor %}
                     </select>
-                    <button class="plantar" id="plantar{{planta.codigo}}">Plantar</button>
+
+                    <button class="plantar" id="plantar{{planta.codigo}}" name="codigo" value="{{planta.codigo}}">Plantar {{planta.nome}}</button>
                 </form>
             </div>
 
             <button id="{{planta.codigo}}" onclick="mais(this.id)" class="mais{{planta.codigo}}">Ver mais</button>
-
 
             <button id="{{planta.codigo}}" onclick="menos(this.id)" class="menos{{planta.codigo}}">Ver menos</button>
 
