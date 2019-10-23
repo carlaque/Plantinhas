@@ -153,7 +153,11 @@ def plantas(request, codigo):
         }
         return render(request, 'plantas.html', args)
     
-    return render(request, 'plantas.html' )
+    args = {
+        'plantas' : Planta.objects.all(),
+    }
+
+    return render(request, 'plantas.html', args )
 
 
 def usuario(request, codigo):
