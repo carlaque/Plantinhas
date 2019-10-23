@@ -109,6 +109,7 @@ def plantasCad(request, codigo):
         }
     else:
         args = {
+            'dados' : Usuario.objects.filter(codigo = codigo).first(),
             'listar_local' : listar_local,
             'listar_tipo'  : listar_tipo,
             'intencao' : Intencao.objects.all(),
