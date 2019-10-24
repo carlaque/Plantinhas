@@ -47,27 +47,21 @@
 
                 <label for="">Para que você quer a plantinha?
                     <select name="intencao" id="busca">
-                        <option value=""></option>
+                        
                         {% for inte in intencao %}
-
+                        <option value="{{inte.codigo}}">{{inte.tipo}}</option>
                         {% endfor %}
-                        <option value="1">Decoração</option>
-                        <option value="2">Tempero</option>
-                        <option value="3">Chá</option>
-                        <option value="4">PANC</option>
+
                     </select>
                 </label>
 
                 <label for="">A temperatura local é:
                     <select name="temperatura" id="busca">
-                        <option value=""></option>
+                        
                         {% for t in temp %}
-
+                        <option value="{{t.codigo}}">{{t.nome}}</option>
                         {% endfor %}
-                        <option value="6">Alta</option>
-                        <option value="5">Amena</option>
-                        <option value="4">Baixa</option>
-                        <option value="3">Muito Baixa</option>
+
                     </select>
                 </label>
                 <button type="submit" name="mostrar"><img src="{% static 'imagens/lupa.png' %}" alt=""></button>

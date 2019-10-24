@@ -124,28 +124,70 @@ def plantas(request, codigo):
             temp = request.GET.get('temperatura')
 
             plantas = {}
-            if espaco != '' and and temp != '':
-                for p in Espaco.objects.filter(lugar = espaco, codClima = temp).all():
-                    if nome != '' and intencao != '' :
-                        plantas = Planta.objects.filter(Q(nome=nome) & Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) & Q(codTipo=intencao) ).distinct()
-                    elif nome == '' and intencao != '' :
-                        plantas = Planta.objects.filter( Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) & Q(codTipo=intencao) ).distinct()
-                    elif nome !='' and intencao == '':
-                        plantas = Planta.objects.filter(Q(nome=nome) & Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first())) ).distinct()
+
+            for p in Espaco.objects.filter(lugar = espaco, codClima = temp).all():
+                if nome != '':
+                    plantas = Planta.objects.filter(Q(nome=nome) & Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) & Q(codTipo=intencao) ).distinct()
+                else:
+                    plantas = Planta.objects.filter( Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) ).distinct()
 
 
-                    else:
-                        plantas = Planta.objects.filter(Q(nome=nome) | Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) & Q(codTipo=intencao)).distinct()
+            # if espaco != '' and  temp != '':
+                
+            #     for p in Espaco.objects.filter(lugar = espaco, codClima = temp).all():
+            #         if nome != '' and intencao != '' :
+            #             plantas = Planta.objects.filter(Q(nome=nome) & Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) & Q(codTipo=intencao) ).distinct()
+            #         elif nome == '' and intencao != '' :
+            #             plantas = Planta.objects.filter( Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) & Q(codTipo=intencao) ).distinct()
+            #         elif nome !='' and intencao == '':
+            #             plantas = Planta.objects.filter(Q(nome=nome) & Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) ).distinct()
+            #         else:
+            #             plantas = Planta.objects.filter( Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) ).distinct()
+
+
+            #         # else:
+            #         #     plantas = Planta.objects.filter(Q(nome=nome) | Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) & Q(codTipo=intencao)).distinct()
             
-            elif espaco == '' and temp != '':
-                for p in Espaco.objects.filter(codClima = temp).all():
-                    if nome != '' and espaco != '' and intencao != '' and temp != '':
-                        plantas = Planta.objects.filter(Q(nome=nome) | Q(codEspaco = Espaco.objects.filter(codigo = p).first()) & Q(codTipo=intencao) ).distinct()
+            # elif espaco == '' and temp != '':
+            #     print('espaco')
+            #     for p in Espaco.objects.filter(codClima = temp).all():
+            #         if nome != '' and intencao != '' :
+            #             plantas = Planta.objects.filter(Q(nome=nome) & Q(codEspaco = p) & Q(codTipo=intencao) ).distinct()
+            #         elif nome == '' and intencao != '' :
+            #             plantas = Planta.objects.filter( Q(codEspaco = p) & Q(codTipo=intencao) ).distinct()
+            #         elif nome !='' and intencao == '':
+            #             plantas = Planta.objects.filter(Q(nome=nome) & Q(codEspaco = p) ).distinct()
+            #         else:
+            #             plantas = Planta.objects.filter( Q(codEspaco = Espaco.objects.filter(codigo = p).first()) ).distinct()
+
+
             
-            elif espaco != '' and and temp == '':
-                for p in Espaco.objects.filter(lugar = espaco).all():
-                    if nome != '' and espaco != '' and intencao != '' and temp != '':
-                        plantas = Planta.objects.filter(Q(nome=nome) | Q(codEspaco = Espaco.objects.filter(codigo = p).first()) & Q(codTipo=intencao) ).distinct()
+            # elif espaco != '' and temp == '':
+            #     print('temp')
+            #     for p in Espaco.objects.filter(lugar = espaco).all():
+            #         if nome != '' and intencao != '' :
+            #             plantas = Planta.objects.filter(Q(nome=nome) & Q(codEspaco = p) & Q(codTipo=intencao) ).distinct()
+            #         elif nome == '' and intencao != '' :
+            #             plantas = Planta.objects.filter( Q(codEspaco = p) & Q(codTipo=intencao) ).distinct()
+            #         elif nome !='' and intencao == '':
+            #             plantas = Planta.objects.filter(Q(nome=nome) & Q(codEspaco = p) ).distinct()
+            #         else:
+            #             plantas = Planta.objects.filter( Q(codEspaco = Espaco.objects.filter(codigo = p).first()) ).distinct()
+            # else:
+            #     print('espaco e temp')
+            #     if nome != '' and intencao != '' :
+            #         plantas = Planta.objects.filter(Q(nome=nome)  & Q(codTipo=intencao) ).distinct()
+            #     elif nome == '' and intencao != '' :
+            #         plantas = Planta.objects.filter( Q(codTipo=intencao) ).distinct()
+            #     elif nome !='' and intencao == '':
+            #         plantas = Planta.objects.filter(Q(nome=nome)   ).distinct()
+            #     else:
+            #         plantas = {}
+
+
+
+            # elif espaco == '' and temp == '':
+
 
 
 
