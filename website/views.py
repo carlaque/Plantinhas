@@ -126,9 +126,9 @@ def plantas(request, codigo):
             plantas = {}
             for p in Espaco.objects.filter(lugar = espaco, codClima = temp).all():
                 if nome != '' :
-                    plantas = Planta.objects.filter(Q(nome=nome) & Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) | Q(codTipo=intencao)).distinct()
+                    plantas = Planta.objects.filter(Q(nome=nome) | Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) & Q(codTipo=intencao) ).distinct()
                 else:
-                    plantas = Planta.objects.filter(Q(nome=nome) | Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) | Q(codTipo=intencao)).distinct()
+                    plantas = Planta.objects.filter(Q(nome=nome) | Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) & Q(codTipo=intencao)).distinct()
             if codigo > 0:
                 args = {
                     'usuario' : True,
