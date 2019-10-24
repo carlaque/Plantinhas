@@ -7,15 +7,9 @@ from django.db.models import Q
 # Create your views here.
 def index(request):
     if not Clima.objects.all():
-        c = Clima()
-        c.nome = 'alta'
-        c.save()
-        c.nome = 'amena'
-        c.save()
-        c.nome = 'baixa'
-        c.save()
-        c.nome = 'muito baixa'
-        c.save()
+        cl = {'alta', 'amena', 'baixa', 'muito baixa'}
+
+
     if not Intencao.objects.all():
         i = Intencao()
         i.tipo = 'Decoração'
