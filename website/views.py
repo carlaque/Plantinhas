@@ -9,6 +9,9 @@ def index(request):
     if not Clima.objects.all():
         cl = {'alta', 'amena', 'baixa', 'muito baixa'}
 
+        for i in cl:
+            x = Clima()
+            x.nome = i
 
     if not Intencao.objects.all():
         i = Intencao()
