@@ -125,11 +125,13 @@
                     placeholder="{{planta.codTipo}}">
 
                 <strong> Observações: </strong>
-                <p id="obs">{{planta.observacoes}}</p>
-                <!-- <input type="text" id="obs" name="observacoes" disabled="disabled"
+                <div id="obs" style="">
+                    {{planta.observacoes}}
+                </div>
+                <!-- <input type="textarea" name="observacoes" disabled="disabled"
                     placeholder=""> -->
 
-                <form method="post">
+                <form method="post" style="background-colo: #677E52 ;">
                     {% csrf_token %}
 
                     {% if usuario %}

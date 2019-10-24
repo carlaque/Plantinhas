@@ -490,11 +490,8 @@ h1{
 }
 
 .pag-plantas #obs{
-    color:ghostwhite;
-    word-wrap: break-word;
-    height:3vh;
     font-size: 12pt;
-    width:100%;
+    max-width:100%;
 }
 
 .pag-plantas #obs:hover{
