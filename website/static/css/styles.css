@@ -643,7 +643,7 @@ h1{
 /* PAGINA USUARIO */
 .pag-usuario{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     flex-direction: row;
     margin-top: 2%;
@@ -664,7 +664,7 @@ h1{
     display: flex;
     background-color: #F6E8B1;
     margin-bottom:3% ;
-    
+    padding: 2%;
     width:25vw;
 }
 
@@ -756,6 +756,5 @@ h1{
     font-size:16pt;
     margin-left: 3% ;
     margin-right: 4%;
-    margin-top:20vh;
     padding:3%;
 } 
