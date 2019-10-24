@@ -124,14 +124,35 @@ def plantas(request, codigo):
             temp = request.GET.get('temperatura')
 
             plantas = {}
-            for p in Espaco.objects.filter(lugar = espaco, codClima = temp).all():
-                if nome != '' :
-                    plantas = Planta.objects.filter(Q(nome=nome) | Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) & Q(codTipo=intencao) ).distinct()
-                else:
-                    plantas = Planta.objects.filter(Q(nome=nome) | Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) & Q(codTipo=intencao)).distinct()
+            if espaco != '' and and temp != '':
+                for p in Espaco.objects.filter(lugar = espaco, codClima = temp).all():
+                    if nome != '' and intencao != '' :
+                        plantas = Planta.objects.filter(Q(nome=nome) & Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) & Q(codTipo=intencao) ).distinct()
+                    elif nome == '' and intencao != '' :
+                        plantas = Planta.objects.filter( Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) & Q(codTipo=intencao) ).distinct()
+                    elif nome !='' and intencao == '':
+                        plantas = Planta.objects.filter(Q(nome=nome) & Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first())) ).distinct()
+
+
+                    else:
+                        plantas = Planta.objects.filter(Q(nome=nome) | Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) & Q(codTipo=intencao)).distinct()
+            
+            elif espaco == '' and temp != '':
+                for p in Espaco.objects.filter(codClima = temp).all():
+                    if nome != '' and espaco != '' and intencao != '' and temp != '':
+                        plantas = Planta.objects.filter(Q(nome=nome) | Q(codEspaco = Espaco.objects.filter(codigo = p).first()) & Q(codTipo=intencao) ).distinct()
+            
+            elif espaco != '' and and temp == '':
+                for p in Espaco.objects.filter(lugar = espaco).all():
+                    if nome != '' and espaco != '' and intencao != '' and temp != '':
+                        plantas = Planta.objects.filter(Q(nome=nome) | Q(codEspaco = Espaco.objects.filter(codigo = p).first()) & Q(codTipo=intencao) ).distinct()
+
+
 
             if codigo > 0:
                 args = {
+                    'intencao' : Intencao.objects.all(),
+                    'temp' : Clima.objects.all(),
                     'usuario' : True,
                     'dados' : Usuario.objects.filter(codigo = codigo).first(),
                     'plantas' : plantas,
@@ -139,6 +160,8 @@ def plantas(request, codigo):
                 }
             else:
                 args = {
+                    'intencao' : Intencao.objects.all(),
+                    'temp' : Clima.objects.all(),
                     'usuario' : False,
                     'dados' : Usuario.objects.filter(codigo = codigo).first(),
                     'plantas' : plantas,
@@ -157,6 +180,8 @@ def plantas(request, codigo):
             plantada.save()
 
             args = {
+                'intencao' : Intencao.objects.all(),
+                'temp' : Clima.objects.all(),
                 'usuario' : True,
                 'dados' : Usuario.objects.filter(codigo = codigo).first(),
                 'plantas' : Planta.objects.all(),
@@ -166,11 +191,15 @@ def plantas(request, codigo):
 
     if codigo == 0:
         args = {
+            'intencao' : Intencao.objects.all(),
+            'temp' : Clima.objects.all(),
             'plantas' : Planta.objects.all(),
             'usuario' : False
         }
     else: 
         args = {
+            'intencao' : Intencao.objects.all(),
+            'temp' : Clima.objects.all(),
             'plantas' : Planta.objects.all(),
             'dados' : Usuario.objects.filter(codigo = codigo).first(),
             'jardins' : Jardim.objects.filter(codUsuario = Usuario.objects.filter(codigo = codigo).first()).all(),

@@ -47,6 +47,10 @@
 
                 <label for="">Para que você quer a plantinha?
                     <select name="intencao" id="busca">
+                        <option value=""></option>
+                        {% for inte in intencao %}
+
+                        {% endfor %}
                         <option value="1">Decoração</option>
                         <option value="2">Tempero</option>
                         <option value="3">Chá</option>
@@ -56,6 +60,10 @@
 
                 <label for="">A temperatura local é:
                     <select name="temperatura" id="busca">
+                        <option value=""></option>
+                        {% for t in temp %}
+
+                        {% endfor %}
                         <option value="6">Alta</option>
                         <option value="5">Amena</option>
                         <option value="4">Baixa</option>
@@ -164,8 +172,8 @@
 
         {% else %}
         <h1>
-            Ops... nenhuma planta assim por aqui... 
-            <p>  Tente outras palavras ou... </p>
+            Ops... nenhuma planta assim por aqui...
+            <p> Tente outras palavras ou... </p>
             <p>
                 Você pode adiciona-la ao Plantinhas <a href="cadastrar/0">aqui</a>
             </p>
