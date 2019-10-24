@@ -162,9 +162,10 @@ section{
 }
 
 .pag-index section div:nth-last-child(1){
-    margin-left:34%;
+    margin-left:30%;
+    margin-right:30%;
     height:15vh;
-    width:30vw;
+    width:40%;
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.397);
 }
@@ -757,9 +758,15 @@ h1{
         justify-content: space-between;
     }
     .pag-index .header_opcoes .opcoes{
-        
         width:40vh;
         height:40vh;
+    }
+    
+    .pag-index section div:nth-last-child(1){
+        margin:0;
+        height:15vh;
+        width:100vw;
+        padding: 5px;
     }
     
 }
