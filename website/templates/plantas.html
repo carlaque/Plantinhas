@@ -124,8 +124,10 @@
                 <strong> Intenção: </strong><input type="text" name="intencao" disabled="disabled"
                     placeholder="{{planta.codTipo}}">
 
-                <strong> Observações: </strong><input type="text" name="observacoes" disabled="disabled"
-                    placeholder="{{planta.observacoes}}">
+                <strong> Observações: </strong>
+                <p id="obs">{{planta.observacoes}}</p>
+                <!-- <input type="text" id="obs" name="observacoes" disabled="disabled"
+                    placeholder=""> -->
 
                 <form method="post">
                     {% csrf_token %}

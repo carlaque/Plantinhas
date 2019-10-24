@@ -282,6 +282,11 @@ nav a{
     color: white;
     margin-right: 20px;
 }
+nav a:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
 
 nav div{
     display: flex;
@@ -289,6 +294,11 @@ nav div{
     align-items: center;
     margin-top: -5px;
     margin-bottom: 10px;
+}
+nav div:hover{
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 nav img{
@@ -479,6 +489,20 @@ h1{
     padding:-2.5px;
 }
 
+.pag-plantas #obs{
+    color:ghostwhite;
+    word-wrap: break-word;
+    height:3vh;
+    font-size: 12pt;
+    width:100%;
+}
+
+.pag-plantas #obs:hover{
+    height:auto;
+    word-wrap: break-word;
+    border:2px solid #1a380b;
+    width:100%;
+}
 
 .planta #principal{
     display: flex;
