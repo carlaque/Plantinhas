@@ -188,11 +188,7 @@ body{
     width: 20vw;
 }
 
-.pesquisar_plantinha{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
+
 
 .pesquisar_regiao{
 margin: 1,1,1,1;

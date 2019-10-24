@@ -51,9 +51,7 @@ body{
     font-size: 30px;
 }
 
-.header_paragrafo{
-    width: 70%;
-}
+
 
 .pag-index header h4{
     color: #677E52;
@@ -75,6 +73,9 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.header_paragrafo{
+    width: 70%;
 }
 
 .pag-index header h3{
@@ -105,9 +106,9 @@ body{
 }
 
 .pag-index .header_opcoes{
+    align-items: center;
     display: flex;
     justify-content: space-around;
-    align-items: center;
     height: 100%;
     width: 100%;
 }
@@ -186,16 +187,6 @@ body{
     margin-top: 50vh;
     opacity: 0.7;
     width: 20vw;
-}
-
-.pesquisar_plantinha{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.pesquisar_regiao{
-margin: 1,1,1,1;
 }
 
 .pag-index {
@@ -303,18 +294,6 @@ footer a{
     color: whitesmoke;
     text-decoration: none;
 }
-
-
-/* .pag-index main{
-    grid-area: main;
-} */
-
-/* .pag-index footer{
-    grid-area: footer;
-    background-color: coral;
-    display: flex;
-    justify-content: space-around;
-} */
 
 .pag-index header{
     grid-area: header;

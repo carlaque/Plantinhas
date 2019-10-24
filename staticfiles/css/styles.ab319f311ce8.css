@@ -51,9 +51,6 @@ body{
     font-size: 30px;
 }
 
-.header_paragrafo{
-    width: 70%;
-}
 
 .pag-index header h4{
     color: #677E52;
@@ -188,11 +185,6 @@ body{
     width: 20vw;
 }
 
-.pesquisar_plantinha{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
 
 .pesquisar_regiao{
 margin: 1,1,1,1;

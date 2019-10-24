@@ -30,7 +30,179 @@ section{
     grid-area: 'sec'
 }
 
+/* PAGINA INDEX */
+.pag-index header h4{
+    align-items: center;
+    color: #677E52;
+    display: flex;
+    font-size: 18pt;
+    text-align: center;
+    justify-content: center;
+    margin: 0;
+}
 
+.pag-index header h3{
+    color: #1a380b;
+    font-size: 30px;
+}
+
+.pag-index .header_espaço{
+    width: 35px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.pag-index .header_linha{
+    height: 250px;
+    width: 3px;
+    background-color: #146b71;
+}
+
+.pag-index .header_lanha{
+    height: 3px;
+    width: 700px;
+    background-color: #677E52;
+}
+
+.header_opcoes{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 70%;
+    width: 100%;
+}
+
+.header_paragrafo{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.opcoes:hover{
+    background: #677E52;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.opcoes{
+    align-items: center;
+    background-color: #89725B;
+    border-radius: 50%;
+    cursor: pointer; 
+    display: flex;
+    flex-direction: column;
+    font-size: 20pt; 
+    height: 270px;
+    justify-content: space-evenly;
+    width: 270px;
+}
+
+.opcoes  a{
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 20px;
+    text-align: center;
+    font-stretch: narrower;
+}
+
+.pag-index {
+    display: grid;
+    grid-template-areas: 'main main main main'
+                         'header header header header'
+                         'section section section section';                
+    grid-template-columns: 24.7vw 24.7vw 24.7vw;
+    grid-template-rows: 70vh 90vh 35vh;   
+    font-family: 'Montserrat', sans-serif; 
+}
+
+.pag-index main div{
+    width:30vw;   
+}
+
+.pag-index main{
+    grid-area: main;
+    background-image: url("../imagens/background-plantinha.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.pag-index main div{
+    margin-left:25vw;
+    margin-top: 65px;
+}
+
+.pag-index main h1{
+    text-align: left;
+    color: whitesmoke;
+    -webkit-animation: fadeIn 5s ease-in-out;
+    -moz-animation: fadeIn 5s ease-in-out;
+    -o-animation: fadeIn 5s ease-in-out;
+    animation: fadeIn 5s ease-in-out; 
+    -webkit-animation-fill-mode:forwards;
+    -moz-animation-fill-mode:forwards;
+    -o-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;  
+    font-size: 50pt;
+}
+
+.pag-index header{
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pag-index section{
+    grid-area: section;
+    background-color: rgba(209, 177, 134, 0.671);
+    text-align: center;    
+}
+
+.pag-index section div:nth-last-child(1){
+    margin-left:34%;
+    height:15vh;
+    width:30vw;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.397);
+}
+
+.pag-index section h3{    
+    color: #1a380b;
+    font-size: 30px;
+}
+
+.pag-index section h4{
+    color: #677E52;
+    font-size: 20px;
+    opacity: 1;
+    transition-delay: 1;
+}
+.pag-index section p{
+    font-size:16pt;
+    margin:0;
+}
+.pag-index section img{
+    height:7vh;
+}
+
+.pag-index header div img{
+    margin: 0;
+    max-width: 1000px;
+    max-height: 82px;
+}
+
+.pag-index footer{
+    grid-area: footer;
+}
+
+
+
+
+
+/* PAGINA LOGIN */
 
 .entrar, .cadastrar{
     border:5px solid #3E8914;
@@ -72,97 +244,6 @@ section{
     font-size: 30px;
 }
 
-.header_paragrafo{
-    width: 70%;
-}
-
-.pag-index header h4{
-    color: #677E52;
-    font-size: 18px;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.pag-index header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.header_paragrafo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.pag-index header h3{
-    color: #1a380b;
-    font-size: 30px;
-}
-
-
-.pag-index .header_espaço{
-    width: 35px;
-    display: flex;
-    justify-content: space-around;
-}
-
-.pag-index .header_linha{
-    height: 250px;
-    width: 3px;
-    background-color: #146b71;
-}
-
-.pag-index .header_lanha{
-    height: 3px;
-    width: 700px;
-    background-color: #677E52;
-}
-
-.pag-index .header_opcoes{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-}
-
-.opcoes:hover{
-    background: #677E52;
-    -webkit-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    transform: scale(1.2);
-}
-
-.opcoes{
-    align-items: center;
-    background-color: #89725B;
-    border-radius: 50%;
-    cursor: pointer; 
-    display: flex;
-    flex-direction: column;
-    font-size: 20pt; 
-    height: 270px;
-    justify-content: space-evenly;
-    width: 270px;
-}
-
-.opcoes  a{
-    text-decoration: none;
-    color: whitesmoke;
-    font-size: 20px;
-    text-align: center;
-    font-stretch: narrower;
-}
-
-.pag-index h4{
-    margin: 0px;
-    opacity: 1;
-}
-
 .pag-login{
     display: flex;
     flex-direction: row;
@@ -177,74 +258,8 @@ section{
     width: 20vw;
 }
 
-.pesquisar_plantinha{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
 .pesquisar_regiao{
 margin: 1,1,1,1;
-}
-
-.pag-index {
-    display: grid;
-    grid-template-areas: 'main main main main'
-                         'header header header header'
-                         'section section section section';                
-    grid-template-columns: 24.7vw 24.7vw 24.7vw;
-    grid-template-rows: 70vh 90vh 30vh;   
-    font-family: 'Montserrat', sans-serif; 
-}
-
-.pag-index main div{
-    
-    width:30vw;
-    
-}
-
-.pag-index main{
-    grid-area: main;
-    background-image: url("../imagens/background-plantinha.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.pag-index main div{
-    margin-left:25vw;
-    margin-top: 65px;
-}
-
-.pag-index main h1{
-    text-align: left;
-    color: whitesmoke;
-    -webkit-animation: fadeIn 5s ease-in-out;
-    -moz-animation: fadeIn 5s ease-in-out;
-    -o-animation: fadeIn 5s ease-in-out;
-    animation: fadeIn 5s ease-in-out; 
-    -webkit-animation-fill-mode:forwards;
-    -moz-animation-fill-mode:forwards;
-    -o-animation-fill-mode:forwards;
-    animation-fill-mode:forwards;  
-    font-size: 50pt;
-}
-
-.pag-index section{
-    grid-area: section;
-    background-color: rgba(209, 177, 134, 0.671);
-    text-align: center;
-}
-
-.pag-index section h3{    
-    color: #1a380b;
-    font-size: 30px;
-}
-
-.pag-index section h4{
-    color: #677E52;
-    font-size: 20px;
-    opacity: 1;
-    transition-delay: 1;
 }
 
 
@@ -285,26 +300,6 @@ nav h1{
 }
 
 
-
-
-/* .pag-index main{
-    grid-area: main;
-} */
-
-/* .pag-index footer{
-    grid-area: footer;
-    background-color: coral;
-    display: flex;
-    justify-content: space-around;
-} */
-
-.pag-index header{
-    grid-area: header;
-    display: flex;
-    flex-direction: column;
-
-}
-
 .sobrenos{
     display: flex;
     justify-content: center;
@@ -318,15 +313,6 @@ nav h1{
     align-items: center;
 }
 
-.pag-index header div img{
-    margin: 0;
-    max-width: 1000px;
-    max-height: 82px;
-}
-
-.pag-index footer{
-    grid-area: footer;
-}
 
 input{
     background-color: transparent;
