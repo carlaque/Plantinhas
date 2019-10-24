@@ -125,13 +125,14 @@ def plantas(request, codigo):
 
             plantas = {}
 
-            for p in Espaco.objects.filter(lugar = espaco, codClima = temp).all():
-                if nome != '':
-                    plantas = Planta.objects.filter(Q(nome=nome) & Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) & Q(codTipo=intencao) ).distinct()
-                elif nome == '' and espaco =='' and intencao == '' and temp =='':
+            if nome != '' and espaco !='' and intencao != '' and temp !='':
+                for p in Espaco.objects.filter(lugar = espaco, codClima = temp).all():
+                    if nome != '':
+                        plantas = Planta.objects.filter(Q(nome=nome) & Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) & Q(codTipo=intencao) ).distinct()
+                    else:
+                        plantas = Planta.objects.filter( Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) ).distinct()
+            elif nome == '' and espaco =='' and intencao == '' and temp =='':
                     plantas= Planta.objects.all()
-                else:
-                    plantas = Planta.objects.filter( Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) ).distinct()
 
 
             # if espaco != '' and  temp != '':
