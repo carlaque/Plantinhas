@@ -763,8 +763,9 @@ h1{
     }
     
     .pag-index section div:nth-last-child(1){
+        margin:0;
         height:15vh;
-        width:100vw;
+        width:auto;
         padding: 5px;
     }
     
