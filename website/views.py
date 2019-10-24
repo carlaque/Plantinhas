@@ -12,18 +12,15 @@ def index(request):
         for i in cl:
             x = Clima()
             x.nome = i
+            x.save()
 
     if not Intencao.objects.all():
         inte = {'Decoração', 'Tempero' , 'Chá', 'PANC'}
-        i = Intencao()
-        i.tipo = 'Decoração'
-        i.save()
-        i.tipo = 'Tempero'
-        i.save()
-        i.tipo = 'Chá'
-        i.save()
-        i.tipo = 'PANC'
-        i.save()
+        
+        for i in inte:
+            x = Intencao()
+            x.tipo = i
+            x.save()
     
     return render(request, 'index.html')
 
