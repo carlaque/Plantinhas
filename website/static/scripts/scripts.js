@@ -60,7 +60,9 @@ function clicar_planta(){
 function cadastre() {
     window.location = "login"
 }
-
+function cadastre_planta(){
+    window.location = "plantas/cadastrar/0"
+}
 
 
 function mais(codigo){

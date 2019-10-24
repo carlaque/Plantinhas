@@ -30,27 +30,32 @@
         <div class="pag-index">
             <main>
                 <div class="fadeIn">
-                    <h1 >Encontre, plante e acompanhe.</h1>
+                    <h1>Encontre, plante e acompanhe.</h1>
                 </div>
             </main>
-            <header>    
+            <header>
                 <h3>Para que posso usar o Plantinhas?</h3>
                 <div class="header_paragrafo">
-                    <h4>Plantinhas te ajuda a cuidar do seu jardim, seja sugerindo espécies que se adequem à sua
+                    <h4>
+                        Plantinhas te ajuda a cuidar do seu jardim, seja sugerindo espécies que se adequem à sua
                         realidade, seja
-                        criando um ambiente virtual que te ajuda a acompanhar a evolução das suas plantas!</h4>
+                        criando um ambiente virtual que te ajuda a acompanhar a evolução das suas plantas!
+                    </h4>
                 </div>
                 <div class="header_opcoes">
-                    <div class="ache_uma_planta" onclick="clicar_planta()">
+                    <div class="opcoes" onclick="clicar_planta()">
                         <img src="{% static 'imagens/icone-header.png' %}" alt="mão com planta">
-                        <a href="plantas/0"><strong> Achar a planta ideal <br>pra você!</strong> </a>
+                        <a href="plantas/0"><strong> Ache a planta ideal <br>pra você!</strong> </a>
                     </div>
-                    <!-- <div class="header_espaço">
-                <div class = "header_linha"></div> 
-            </div> -->
-                    <div class="monte_seu_jardim" onclick="cadastre()">
-                        <img src="../static/imagens/icone-header-2.png" alt="plantas no jardim">
-                        <a href="login/"><strong> Entre para montar seu jardim!</strong> </a>
+
+                    <div class="opcoes" onclick="cadastre()">
+                        <img src="{% static 'imagens/icone-header-2.png' %}" alt="plantas no jardim">
+                        <a href="login/"><strong> Entre e monte <br>seu jardim!</strong> </a>
+                    </div>
+
+                    <div class="opcoes" onclick="cadastre_planta()">
+                        <img src="{% static 'imagens/plant.svg' %}" alt="regando">
+                        <a href="plantas/cadastrar/0"><strong> Colabore com<br>o Plantinhas!</strong> </a>
                     </div>
                 </div>
             </header>
