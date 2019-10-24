@@ -129,6 +129,7 @@ def plantas(request, codigo):
                     plantas = Planta.objects.filter(Q(nome=nome) | Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) & Q(codTipo=intencao) ).distinct()
                 else:
                     plantas = Planta.objects.filter(Q(nome=nome) | Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) & Q(codTipo=intencao)).distinct()
+
             if codigo > 0:
                 args = {
                     'usuario' : True,
