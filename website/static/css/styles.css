@@ -715,6 +715,7 @@ h1{
 
 .pag-plantadas form{
     background-color: #677E52;
+    box-shadow:5px 5px;
     margin: 1%;
     padding: 1%;
 }
@@ -728,10 +729,29 @@ h1{
     background-color: #0B380B;
     color: #DCF4AB;
     margin: 0 3% 0;
+    padding:3%;
     margin-left: 3vw;
 } 
 
 
-.pag-plantadas .achar{
-    background-color:black;
+.pag-plantadas .achar {
+    display: flex;
+    justify-content: space-between;
+    padding:2%;
+    width: 20vw;
 }
+
+.achar form{
+    padding:2%;
+}
+.achar button{
+    border: 3px solid #89725B;
+    font-size: 12pt;
+    background-color:transparent;
+    color: #F6E8B1;
+    font-size:16pt;
+    margin-left: 3% ;
+    margin-right: 4%;
+    margin-top:20vh;
+    padding:3%;
+} 
