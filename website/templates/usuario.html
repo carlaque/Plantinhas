@@ -21,7 +21,7 @@
         <div class="jardim">
 
             {% csrf_token %}
-            <input type="text" name="nome" id="" disabled="disabled" value="{{jardim.nome}}">
+            <strong><input type="text" name="nome" id="" disabled="disabled" value="{{jardim.nome}}"></strong>
 
             {%if jardim.ensolarado == True %}
             <label for="">
@@ -33,7 +33,7 @@
                     disabled="disabled"></label>
             {%endif%}
 
-            <button type="submit" name="plantada" value="{{jardim.codigo}}">Plantas</button>
+            <button type="submit" name="plantada" value="{{jardim.codigo}}">Plantado</button>
         </div>
     </form>
     {% endfor %}
