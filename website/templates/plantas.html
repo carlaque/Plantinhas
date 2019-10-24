@@ -39,6 +39,7 @@
             <div>
                 <label for="">Onde você quer plantar?
                     <select name="espaco" id="busca">
+                        <option value=""></option>
                         <option value="Vaso">Vaso</option>
                         <option value="Chão">Canteiro</option>
                         <option value="Suspensa">Suspensa</option>
@@ -47,7 +48,7 @@
 
                 <label for="">Para que você quer a plantinha?
                     <select name="intencao" id="busca">
-                        
+                        <option value=""></option>
                         {% for inte in intencao %}
                         <option value="{{inte.codigo}}">{{inte.tipo}}</option>
                         {% endfor %}
@@ -57,7 +58,7 @@
 
                 <label for="">A temperatura local é:
                     <select name="temperatura" id="busca">
-                        
+                        <option value=""></option>
                         {% for t in temp %}
                         <option value="{{t.codigo}}">{{t.nome}}</option>
                         {% endfor %}
