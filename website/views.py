@@ -14,6 +14,7 @@ def index(request):
             x.nome = i
 
     if not Intencao.objects.all():
+        inte = {'Decoração', 'Tempero' , 'Chá', 'PANC'}
         i = Intencao()
         i.tipo = 'Decoração'
         i.save()
