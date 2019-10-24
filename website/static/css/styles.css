@@ -438,16 +438,26 @@ h1{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    padding: 2%;
 }
 
 .pag-plantas form div{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
 }
+.pag-plantas input::placeholder{
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    color: #0B380B;
+    font-size:14pt;
+} 
 
 .pag-plantas form div select{
+      
+    font-family: 'Montserrat', sans-serif;
+    color: #0B380B;
     border-color: #0B380B;
     border-style: solid;
     border-width: 1px;
@@ -455,14 +465,17 @@ h1{
     height: 5vh;
     font-size: 14pt;
     background-color: transparent;
-    width: 10vw;  
+    
 }
 .pag-plantas form div button{
-    background-size: 100%;
+    background:transparent;
     border:none;
     margin-top:10px;
     height: 40px;
     width: 40px;
+}
+.pag-plantas form div button img{
+    width:100%;
 }
 
 .exibicao{
@@ -476,7 +489,7 @@ h1{
 .planta{
     background-color:#3E8914;
     border: 5px solid #C2A878;
-    
+    visibility: visible;
     color: #D6E681;
     display: flex;
     flex-wrap: wrap;
@@ -492,26 +505,28 @@ h1{
     width: 65%;
 }
 
-.planta input{
+.planta input{   
     border: none;
-    height: 7vh;
-    padding:2.5px;
+    padding:-2.5px;
 }
+
 
 .planta #principal{
     display: flex;
     flex-direction: row;
-    padding-left: 5%;
+    padding-left: 5vw;
 }
 
 .planta #info{
+    background-color:#677E52;
+    border:2px solid #D6E681;
+    box-shadow: 10px 10px ;
     display: flex;
     flex-direction: column;
-    height: 20vh;
-    margin-top:-115%;
+    margin-top:-100%;
     visibility: hidden;
     padding:2%;
-    justify-content: space-between;
+    
 }
 .planta #info div{
     display: flex;
@@ -525,8 +540,6 @@ h1{
 .planta #info strong{
     font-family: 'Montserrat', sans-serif;
     border: none;
-    height: 7vh;
-    padding:3px;
 }
 
 .planta input::placeholder{
@@ -554,7 +567,7 @@ h1{
 
 .planta button:nth-last-child(1){
     visibility: hidden;
-    margin-bottom: 20px;
+    margin-top: -20px;
 }
 
 .planta #info form button{

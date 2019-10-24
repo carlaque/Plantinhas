@@ -68,6 +68,11 @@ function mais(codigo){
     var esconde = document.querySelector(".principal"+codigo)
     esconde.style.visibility = "hidden"
     abre.style.visibility = "visible"
+    abre.style.height = '60vh'
+
+    var planta = document.querySelector("#planta"+codigo)
+    planta.style.backgroundColor = "transparent"
+    planta.style.border = "none"
 
     if (document.querySelector("#plantar"+ codigo )){
         document.querySelector("#plantar"+ codigo ).style.visibility = "visible"
@@ -81,8 +86,14 @@ function mais(codigo){
 function menos(codigo){
     var abre = document.querySelector(".info"+codigo)
     var esconde = document.querySelector(".principal"+codigo)
+    document.querySelector("#planta"+codigo).style.visibility = "visible"
     esconde.style.visibility = "visible"
     abre.style.visibility = "hidden"
+
+    var planta = document.querySelector("#planta"+codigo)
+    planta.style.backgroundColor = ""
+    planta.style.border = ""
+    
 
     if (document.querySelector("#plantar"+ codigo )){
         document.querySelector("#plantar"+ codigo ).style.visibility = "hidden"
