@@ -125,7 +125,7 @@ def plantas(request, codigo):
 
             plantas = {}
 
-            if  espaco !='' and intencao != '' and temp !='':
+            if espaco !='' and intencao != '' and temp !='':
                 for p in Espaco.objects.filter(lugar = espaco, codClima = temp).all():
                     if nome != '':
                         plantas = Planta.objects.filter(Q(nome=nome) & Q(codEspaco = Espaco.objects.filter(codigo = p, lugar = espaco).first()) & Q(codTipo=intencao) ).distinct()
@@ -139,8 +139,8 @@ def plantas(request, codigo):
             # elif nome != '' and (espaco =='' or temp =='') and intencao == '':
             #     plantas = Planta.objects.filter( nome = nome ).distinct()
 
-            # elif nome == '' and espaco =='' and intencao == '' and temp =='':
-            #         plantas= Planta.objects.all()
+            if nome == '' and espaco =='' and intencao == '' and temp =='':
+                    plantas= Planta.objects.all()
 
 
             # if espaco != '' and  temp != '':
