@@ -736,13 +736,12 @@ h1{
                              'header'
                              'section';                
         grid-template-columns: 100%;
-        grid-template-rows: 80vh 180vh 35vh;   
+        grid-template-rows: 100vh 180vh 35vh;   
         font-family: 'Montserrat', sans-serif;
     }
     
     .pag-index main h1{
         margin-top:0;
-        font-size:40pt;
     }
     .pag-index header h3{
         margin: 0;
